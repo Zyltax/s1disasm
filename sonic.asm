@@ -2046,16 +2046,16 @@ Map_Splash:	include	"Objects/08 LZ Water Splash/maps/Water Splash.asm"
 
 ; ===========================================================================
 ; >>> Bosses and related objects
-		include	"Objects/3D, 48 Boss - GHZ Main and Wrecking Ball/3D, 48 Boss - GHZ Main and Wrecking Ball.asm" ; includes "BossDefeated" and "BossMove" subroutines
-		include	"Objects/shared/Boss/anim/Eggman.asm"
-Map_Eggman:	include	"Objects/shared/Boss/maps/Eggman.asm"
-Map_BossItems:	include	"Objects/shared/Boss/maps/Boss Items.asm"
-		include	"Objects/77 Boss - LZ Main/77 Boss - LZ Main.asm"
-		include	"Objects/73, 74 Boss - MZ Main and Fire/73, 74 Boss - MZ Main and Fire.asm"
-		include	"Objects/7A, 7B Boss - SLZ Main and Spike Balls/7A, 7B Boss - SLZ Main and Spike Balls.asm"
-		include	"Objects/75, 76 Boss - SYZ Main and Blocks/75, 76 Boss - SYZ Main and Blocks.asm"
+		include	"Objects/Bosses/Egg Wrecker/Routines.asm" ; includes "BossDefeated" and "BossMove" subroutines
+		include	"Objects/Bosses/Shared/Animations/Eggman.asm"
+Map_Eggman:	include	"Objects/Bosses/Shared/Mappings/Eggman.asm"
+Map_BossItems:	include	"Objects/Bosses/Shared/Mappings/Boss Items.asm"
+		include	"Objects/Bosses/Egg Mobile/Routines.asm"
+		include	"Objects/Bosses/Egg Scorcher/Routines.asm"
+		include	"Objects/Bosses/Egg Spiker/Routines.asm"
+		include	"Objects/Bosses/Egg Stinger/Routines.asm"
 		include	"Objects/82, 83 SBZ Eggman Cutscene and Crumbling Floor/82, 83 SBZ Eggman Cutscene and Crumbling Floor.asm"
-		include	"Objects/85,84,86 Boss - FZ Main, Cylinders, and Plasma Balls/85,84,86 Boss - FZ Main, Cylinders, and Plasma Balls.asm"
+		include	"Objects/Bosses/Egg Crusher/Routines.asm"
 		include	"Objects/3E Prison Capsule/3E Prison Capsule.asm"
 
 
@@ -2547,19 +2547,19 @@ Blk256_SBZ:
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - bosses and ending sequence
 ; ---------------------------------------------------------------------------
-Nem_Eggman:	binclude	"Objects/shared/Boss/art/Boss - Main.nem"
+Nem_Eggman:	binclude	"Objects/Bosses/Shared/Cells/Boss - Main.nem"
 		even
-Nem_Weapons:	binclude	"Objects/shared/Boss/art/Boss - Weapons.nem"
+Nem_Weapons:	binclude	"Objects/Bosses/Shared/Cells/Boss - Weapons.nem"
 		even
 Nem_Prison:	binclude	"Objects/3E Prison Capsule/art/Prison Capsule.nem"
 		even
-Nem_Sbz2Eggman:	binclude	"Objects/shared/Boss/art/Boss - Eggman in SBZ2 & FZ.nem"
+Nem_Sbz2Eggman:	binclude	"Objects/Bosses/Shared/Cells/Boss - Eggman in SBZ2 & FZ.nem"
 		even
-Nem_FzBoss:	binclude	"Objects/85,84,86 Boss - FZ Main, Cylinders, and Plasma Balls/art/Boss - Final Zone.nem"
+Nem_FzBoss:	binclude	"Objects/Bosses/Egg Crusher/Cells/Boss - Final Zone.nem"
 		even
-Nem_FzEggman:	binclude	"Objects/85,84,86 Boss - FZ Main, Cylinders, and Plasma Balls/art/Boss - Eggman after FZ Fight.nem"
+Nem_FzEggman:	binclude	"Objects/Bosses/Egg Crusher/Cells/Boss - Eggman after FZ Fight.nem"
 		even
-Nem_Exhaust:	binclude	"Objects/shared/Boss/art/Boss - Exhaust Flame.nem"
+Nem_Exhaust:	binclude	"Objects/Bosses/Shared/Cells/Boss - Exhaust Flame.nem"
 		even
 Nem_EndEm:	binclude	"Game Modes/Ending/art/Ending - Emeralds.nem"
 		even
