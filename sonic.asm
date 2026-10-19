@@ -1849,11 +1849,11 @@ WaitForVBlank:
 		include	"Objects/15 Swinging Platforms/15 Swinging Platforms.asm" ; includes "MvSonicOnPtfm" subroutine
 		include	"Objects/17 GHZ Spiked Pole Helix/17 GHZ Spiked Pole Helix.asm"
 		include	"Objects/18 Platforms/18 Platforms.asm"
-		include	"Objects/19 Unused - Blank/19 Unused - Blank.asm" ; this was the rolling GHZ ball in the prototype
-Map_GBall:	include	"Objects/19 Unused - Blank/maps/GHZ Ball.asm"
+		include	"Objects/Unused/GHZ Ball.asm" ; this was the rolling GHZ ball in the prototype
+Map_GBall:	include	"Objects/Unused/Mappings/GHZ Ball.map"
 		include	"Objects/1A, 53 Collapsing Ledges and Floors/1A, 53 Collapsing Ledges and Floors.asm" ; includes "SlopeObject_AssumeStoodOn" subroutine
 		include	"Objects/1C GHZ, SYZ Scenery/1C GHZ, SYZ Scenery.asm"
-		include	"Objects/1D Unused - Switch/1D Unused - Switch.asm"
+		include	"Objects/Unused/Switch.asm"
 		include	"Objects/2A SBZ Small Door/2A SBZ Small Door.asm"
 		include	"Objects/shared/sub SolidWall.asm"
 
@@ -1861,11 +1861,11 @@ Map_GBall:	include	"Objects/19 Unused - Blank/maps/GHZ Ball.asm"
 ; ===========================================================================
 ; >>> Badniks, explosions, and Badnik-related objects
 		include	"Objects/1E, 20 Badnik - Ball Hog and Cannonball/1E, 20 Badnik - Ball Hog and Cannonball.asm"
-		include	"Objects/24 Unused - Small Explosion/24 Unused - Small Explosion.asm"
+		include	"Objects/Unused/Small Explosion.asm"
 		include	"Objects/27, 3F Explosions/27, 3F Explosions.asm"
 		include	"Objects/1E, 20 Badnik - Ball Hog and Cannonball/anim/Ball Hog.asm"
 Map_Hog:	include	"Objects/1E, 20 Badnik - Ball Hog and Cannonball/maps/Ball Hog.asm"
-Map_UnkExplode:	include	"Objects/24 Unused - Small Explosion/maps/Unused Explosion.asm"
+Map_UnkExplode:	include	"Objects/Unused/Mappings/Small Explosion.map"
 		include	"Objects/27, 3F Explosions/maps/Explosions.asm"
 		include	"Objects/28, 29 Animals and Points/28, 29 Animals and Points.asm"
 		include	"Objects/1F Badnik - Crabmeat/1F Badnik - Crabmeat.asm"
@@ -1907,20 +1907,20 @@ Map_Flash:	include	"Objects/4B, 7C Giant Ring and Flash/maps/Ring Flash.asm"
 Map_Fire:	include	"Objects/13, 14 MZ, SLZ Fire Balls and Maker/maps/Fireballs.asm"
 		include	"Objects/30 MZ Large Green Glass Blocks/30 MZ Large Green Glass Blocks.asm"
 		include	"Objects/31 MZ Chained Stompers/31 MZ Chained Stompers.asm"
-		include	"Objects/45 Unused - MZ Sideways Stomper/45 Unused - MZ Sideways Stomper.asm"
+		include	"Objects/Unused/MZ Sideways Stomper.asm"
 Map_CStom:	include	"Objects/31 MZ Chained Stompers/maps/Chained Stompers.asm"
-Map_SStom:	include	"Objects/45 Unused - MZ Sideways Stomper/maps/Sideways Stomper.asm"
+Map_SStom:	include	"Objects/Unused/Mappings/MZ Sideways Stomper.map"
 		include	"Objects/32 Button/32 Button.asm"
 		include	"Objects/33 MZ, LZ Pushable Blocks/33 MZ, LZ Pushable Blocks.asm"
 
 
 ; ===========================================================================
 ; >>> Title card objects
-		include	"Objects/34 Title Cards/34 Title Cards.asm"
+		include	"Objects/Cards/Title Cards.asm"
 		include	"Objects/39 Game Over/39 Game Over.asm"
-		include	"Objects/3A Got Through Card/3A Got Through Card.asm"
+		include	"Objects/Cards/Got Through Card.asm"
 		include	"Objects/7E, 7F Special Stage Results and Chaos Emeralds/7E, 7F Special Stage Results and Chaos Emeralds.asm"
-		include	"Objects/34 Title Cards/maps/Title Cards.asm" ; includes "Map_Card", "Map_Over", "Map_Got", and "Map_SSR"
+		include	"Objects/Cards/Mappings/Title Cards.asm" ; includes "Map_Card", "Map_Over", "Map_Got", and "Map_SSR"
 Map_SSRC:	include	"Objects/7E, 7F Special Stage Results and Chaos Emeralds/maps/SS Result Chaos Emeralds.asm"
 
 
@@ -1966,7 +1966,7 @@ Map_PRock:	include	"Objects/3B GHZ Purple Rock/maps/Purple Rock.asm"
 Map_Geyser:	include	"Objects/4C, 4D MZ Lava Geyser and Maker/maps/Lava Geyser.asm"
 Map_LWall:	include	"Objects/4E MZ Wall of Lava/maps/Wall of Lava.asm"
 		include	"Objects/40 Badnik - Moto Bug/40 Badnik - Moto Bug.asm" ; includes "Objects/shared/sub RememberState.asm" subroutine
-		include	"Objects/4F Unused - Blank/4F Unused - Blank.asm" ; this was Splats in the prototype
+		include	"Objects/Unused/Splats.asm" ; this was Splats in the prototype
 		include	"Objects/50 Badnik - Yadrin/50 Badnik - Yadrin.asm"
 		include	"Objects/shared/sub SolidObject.asm"
 		include	"Objects/51 MZ Smashable Green Block/51 MZ Smashable Green Block.asm"
@@ -2004,12 +2004,12 @@ Map_LWall:	include	"Objects/4E MZ Wall of Lava/maps/Wall of Lava.asm"
 ; >>> Various unique objects
 		include	"Objects/0A LZ Drowning Countdown/0A LZ Drowning Countdown.asm" ; includes ResumeMusic
 		include	"Objects/38 Shield and Invincibility/38 Shield and Invincibility.asm"
-		include	"Objects/4A Unused - Special Stage Entry/4A Unused - Special Stage Entry.asm"
+		include	"Objects/Unused/Special Stage Entry.asm"
 		include	"Objects/08 LZ Water Splash/08 LZ Water Splash.asm"
 		include	"Objects/38 Shield and Invincibility/anim/Shield and Invincibility.asm"
 Map_Shield:	include	"Objects/38 Shield and Invincibility/maps/Shield and Invincibility.asm"
-		include	"Objects/4A Unused - Special Stage Entry/anim/Special Stage Entry (Unused).asm"
-Map_Vanish:	include	"Objects/4A Unused - Special Stage Entry/maps/Special Stage Entry (Unused).asm"
+		include	"Objects/Unused/Animations/Special Stage Entry.ani"
+Map_Vanish:	include	"Objects/Unused/Mappings/Special Stage Entry.map"
 		include	"Objects/08 LZ Water Splash/anim/Water Splash.asm"
 Map_Splash:	include	"Objects/08 LZ Water Splash/maps/Water Splash.asm"
 
@@ -2046,16 +2046,16 @@ Map_Splash:	include	"Objects/08 LZ Water Splash/maps/Water Splash.asm"
 
 ; ===========================================================================
 ; >>> Bosses and related objects
-		include	"Objects/Bosses/Egg Wrecker/Routines.asm" ; includes "BossDefeated" and "BossMove" subroutines
-		include	"Objects/Bosses/Shared/Animations/Eggman.asm"
-Map_Eggman:	include	"Objects/Bosses/Shared/Mappings/Eggman.asm"
-Map_BossItems:	include	"Objects/Bosses/Shared/Mappings/Boss Items.asm"
-		include	"Objects/Bosses/Egg Mobile/Routines.asm"
-		include	"Objects/Bosses/Egg Scorcher/Routines.asm"
-		include	"Objects/Bosses/Egg Spiker/Routines.asm"
-		include	"Objects/Bosses/Egg Stinger/Routines.asm"
+		include	"Objects/Bosses/Egg Wrecker.asm" ; includes "BossDefeated" and "BossMove" subroutines
+		include	"Objects/Bosses/Animations/Eggman.ani"
+Map_Eggman:	include	"Objects/Bosses/Mappings/Eggman.map"
+Map_BossItems:	include	"Objects/Bosses/Mappings/Boss Items.map"
+		include	"Objects/Bosses/Egg Mobile.asm"
+		include	"Objects/Bosses/Egg Scorcher.asm"
+		include	"Objects/Bosses/Egg Spiker.asm"
+		include	"Objects/Bosses/Egg Stinger.asm"
 		include	"Objects/82, 83 SBZ Eggman Cutscene and Crumbling Floor/82, 83 SBZ Eggman Cutscene and Crumbling Floor.asm"
-		include	"Objects/Bosses/Egg Crusher/Routines.asm"
+		include	"Objects/Bosses/Egg Crusher.asm"
 		include	"Objects/3E Prison Capsule/3E Prison Capsule.asm"
 
 
@@ -2079,7 +2079,7 @@ Map_SS_Chaos:	include	"Game Modes/Special Stage/maps/SS Chaos Emeralds.asm"
 
 ; ===========================================================================
 ; >>> Deleted, blank object that is randomly mixed in here
-		include	"Objects/10 Unused - Blank/10 Unused - Blank.asm" ; this was an animation test object for Sonic in the prototype
+		include	"Objects/Unused/Animation Test.asm" ; this was an animation test object for Sonic in the prototype
 
 
 ; ===========================================================================
@@ -2089,13 +2089,13 @@ Map_SS_Chaos:	include	"Game Modes/Special Stage/maps/SS Chaos Emeralds.asm"
 
 ; ===========================================================================
 ; >>> HUD objects
-		include	"Objects/21 HUD/21 HUD.asm"
+		include	"Objects/Cards/HUD.asm"
 		include	"Objects/shared/sub AddPoints.asm"
 		include	"Libraries/HUD Update.asm" ; includes "ContScrCounter" subroutine
 
-Art_Hud:	binclude "Objects/21 HUD/art/HUD Numbers.unc" ; 8x16 pixel numbers on HUD
+Art_Hud:	binclude "Objects/Cards/Cells/HUD/Numerals.unc" ; 8x16 pixel numbers on HUD
 		even
-Art_LivesNums:	binclude "Objects/21 HUD/art/Lives Counter Numbers.unc" ; 8x8 pixel numbers on lives counter
+Art_LivesNums:	binclude "Objects/Cards/Cells/HUD/Life Numerals.unc" ; 8x8 pixel numbers on lives counter
 		even
 
 
@@ -2256,7 +2256,7 @@ Nem_Bridge:	binclude	"Objects/11 GHZ Bridge/art/GHZ Bridge.nem"
 		even
 Nem_GhzUnkBlock:binclude	"Zones/Green Hill Zone/art/Unused - GHZ Block.nem"
 		even
-Nem_Ball:	binclude	"Objects/19 Unused - Blank/art/GHZ Giant Ball.nem"
+Nem_Ball:	binclude	"Objects/Unused/Cells/GHZ Ball.nem"
 		even
 Nem_Spikes:	binclude	"Objects/36 Spikes/art/Spikes.nem"
 		even
@@ -2430,11 +2430,11 @@ Nem_Cater:	binclude	"Objects/78 Badnik - Caterkiller/art/Enemy Caterkiller.nem"
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - various
 ; ---------------------------------------------------------------------------
-Nem_TitleCard:	binclude	"Objects/34 Title Cards/art/Title Cards.nem"
+Nem_TitleCard:	binclude	"Objects/Cards/Cells/Title Cards.nem"
 		even
-Nem_Hud:	binclude	"Objects/21 HUD/art/HUD.nem" ; HUD (rings, time, score)
+Nem_Hud:	binclude	"Objects/Cards/Cells/HUD/Text.nem" ; HUD (rings, time, score)
 		even
-Nem_Lives:	binclude	"Objects/21 HUD/art/HUD - Life Counter Icon.nem"
+Nem_Lives:	binclude	"Objects/Cards/Cells/HUD/Life Icon.nem"
 		even
 Nem_Ring:	binclude	"Objects/25, 37 Rings/art/Rings.nem"
 		even
@@ -2547,19 +2547,19 @@ Blk256_SBZ:
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - bosses and ending sequence
 ; ---------------------------------------------------------------------------
-Nem_Eggman:	binclude	"Objects/Bosses/Shared/Cells/Boss - Main.nem"
+Nem_Eggman:	binclude	"Objects/Bosses/Cells/Main.nem"
 		even
-Nem_Weapons:	binclude	"Objects/Bosses/Shared/Cells/Boss - Weapons.nem"
+Nem_Weapons:	binclude	"Objects/Bosses/Cells/Weapons.nem"
 		even
 Nem_Prison:	binclude	"Objects/3E Prison Capsule/art/Prison Capsule.nem"
 		even
-Nem_Sbz2Eggman:	binclude	"Objects/Bosses/Shared/Cells/Boss - Eggman in SBZ2 & FZ.nem"
+Nem_Sbz2Eggman:	binclude	"Objects/Bosses/Cells/Eggman (SBZ2 & FZ).nem"
 		even
-Nem_FzBoss:	binclude	"Objects/Bosses/Egg Crusher/Cells/Boss - Final Zone.nem"
+Nem_FzBoss:	binclude	"Objects/Bosses/Cells/Egg Crusher.nem"
 		even
-Nem_FzEggman:	binclude	"Objects/Bosses/Egg Crusher/Cells/Boss - Eggman after FZ Fight.nem"
+Nem_FzEggman:	binclude	"Objects/Bosses/Cells/Eggman (After Crusher).nem"
 		even
-Nem_Exhaust:	binclude	"Objects/Bosses/Shared/Cells/Boss - Exhaust Flame.nem"
+Nem_Exhaust:	binclude	"Objects/Bosses/Cells/Exhaust Flame.nem"
 		even
 Nem_EndEm:	binclude	"Game Modes/Ending/art/Ending - Emeralds.nem"
 		even

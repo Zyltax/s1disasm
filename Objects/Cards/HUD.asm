@@ -56,4 +56,4 @@ HUD_Flash:	; Routine 2
 		jmp	(DisplaySprite).l			; display HUD
 ; ===========================================================================
 
-Map_HUD:	include	"Objects/21 HUD/maps/HUD.asm"
+Map_HUD:	include	"Objects/Cards/Mappings/HUD.map"

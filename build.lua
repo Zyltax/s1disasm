@@ -25,7 +25,7 @@ common.convert_dpcm_files_in_directory("sound/dac/dpcm")
 
 -- Build the ROM.
 local compression = improved_dac_driver_compression and "kosinski-optimised" or "kosinski"
-common.build_rom_and_handle_failure("sonic", "s1built", "", "-p=FF -z=0," .. compression .. ",Size_of_DAC_driver_guess,after", false, "https://github.com/sonicretro/s1disasm")
+common.build_rom_and_handle_failure("sonic", "s1built", "-gnuerrors", "-p=FF -z=0," .. compression .. ",Size_of_DAC_driver_guess,after", false, "https://github.com/sonicretro/s1disasm")
 
 -- Correct the ROM's header with a proper checksum and end-of-ROM value.
 common.fix_header("s1built.bin")

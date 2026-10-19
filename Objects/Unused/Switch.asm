@@ -93,4 +93,4 @@ Swi_ChkTouch:
 
 ; ===========================================================================
 
-Map_Swi:	include	"Objects/1D Unused - Switch/maps/Unused Switch.asm"
+Map_Swi:	include	"Objects/Unused/Mappings/Switch.map"
