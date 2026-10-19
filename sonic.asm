@@ -1860,16 +1860,16 @@ Map_GBall:	include	"Objects/Unused/Mappings/GHZ Ball.map"
 
 ; ===========================================================================
 ; >>> Badniks, explosions, and Badnik-related objects
-		include	"Objects/1E, 20 Badnik - Ball Hog and Cannonball/1E, 20 Badnik - Ball Hog and Cannonball.asm"
+		include	"Objects/Badniks/Ball Hog and Cannonball.asm"
 		include	"Objects/Unused/Small Explosion.asm"
 		include	"Objects/27, 3F Explosions/27, 3F Explosions.asm"
-		include	"Objects/1E, 20 Badnik - Ball Hog and Cannonball/anim/Ball Hog.asm"
-Map_Hog:	include	"Objects/1E, 20 Badnik - Ball Hog and Cannonball/maps/Ball Hog.asm"
+		include	"Objects/Badniks/Animations/Ball Hog.ani"
+Map_Hog:	include	"Objects/Badniks/Mappings/Ball Hog.map"
 Map_UnkExplode:	include	"Objects/Unused/Mappings/Small Explosion.map"
 		include	"Objects/27, 3F Explosions/maps/Explosions.asm"
 		include	"Objects/28, 29 Animals and Points/28, 29 Animals and Points.asm"
-		include	"Objects/1F Badnik - Crabmeat/1F Badnik - Crabmeat.asm"
-		include	"Objects/22, 23 Badnik - Buzz Bomber and Missile/22, 23 Badnik - Buzz Bomber and Missile.asm"
+		include	"Objects/Badniks/Crabmeat.asm"
+		include	"Objects/Badniks/Buzz Bomber and Missile.asm"
 
 
 ; ===========================================================================
@@ -1900,9 +1900,9 @@ Map_Flash:	include	"Objects/4B, 7C Giant Ring and Flash/maps/Ring Flash.asm"
 
 ; ===========================================================================
 ; >>> More Badniks and level objects
-		include	"Objects/2B Badnik - Chopper/2B Badnik - Chopper.asm"
-		include	"Objects/2C Badnik - Jaws/2C Badnik - Jaws.asm"
-		include	"Objects/2D Badnik - Burrobot/2D Badnik - Burrobot.asm"
+		include	"Objects/Badniks/Chopper.asm"
+		include	"Objects/Badniks/Jaws.asm"
+		include	"Objects/Badniks/Burrobot.asm"
 		include	"Objects/2F, 35 MZ Large Grassy Platforms and Burning Grass/2F, 35 MZ Large Grassy Platforms and Burning Grass.asm"
 Map_Fire:	include	"Objects/13, 14 MZ, SLZ Fire Balls and Maker/maps/Fireballs.asm"
 		include	"Objects/30 MZ Large Green Glass Blocks/30 MZ Large Green Glass Blocks.asm"
@@ -1949,8 +1949,8 @@ Map_PRock:	include	"Objects/3B GHZ Purple Rock/maps/Purple Rock.asm"
 ; ===========================================================================
 ; >>> More level objects
 		include	"Objects/41 Springs/41 Springs.asm"
-		include	"Objects/42 Badnik - Newtron/42 Badnik - Newtron.asm"
-		include	"Objects/43 Badnik - Roller/43 Badnik - Roller.asm"
+		include	"Objects/Badniks/Newtron.asm"
+		include	"Objects/Badniks/Roller.asm"
 		include	"Objects/44 GHZ Edge Walls/44 GHZ Edge Walls.asm"
 		include	"Objects/13, 14 MZ, SLZ Fire Balls and Maker/13, 14 MZ, SLZ Fire Balls and Maker.asm"
 		include	"Objects/6D SBZ Flamethrower/6D SBZ Flamethrower.asm"
@@ -1965,13 +1965,13 @@ Map_PRock:	include	"Objects/3B GHZ Purple Rock/maps/Purple Rock.asm"
 		include	"Objects/4E MZ Wall of Lava/anim/Wall of Lava.asm"
 Map_Geyser:	include	"Objects/4C, 4D MZ Lava Geyser and Maker/maps/Lava Geyser.asm"
 Map_LWall:	include	"Objects/4E MZ Wall of Lava/maps/Wall of Lava.asm"
-		include	"Objects/40 Badnik - Moto Bug/40 Badnik - Moto Bug.asm" ; includes "Objects/shared/sub RememberState.asm" subroutine
+		include	"Objects/Badniks/Moto Bug.asm" ; includes "Objects/shared/sub RememberState.asm" subroutine
 		include	"Objects/Unused/Splats.asm" ; this was Splats in the prototype
-		include	"Objects/50 Badnik - Yadrin/50 Badnik - Yadrin.asm"
+		include	"Objects/Badniks/Yadrin.asm"
 		include	"Objects/shared/sub SolidObject.asm"
 		include	"Objects/51 MZ Smashable Green Block/51 MZ Smashable Green Block.asm"
 		include	"Objects/52 Moving Blocks/52 Moving Blocks.asm"
-		include	"Objects/55 Badnik - Basaran/55 Badnik - Basaran.asm"
+		include	"Objects/Badniks/Basaran.asm"
 		include	"Objects/56 SYZ, SLZ Floating Blocks and LZ Doors/56 SYZ, SLZ Floating Blocks and LZ Doors.asm"
 		include	"Objects/57 SYZ, LZ Spiked Ball and Chain/57 SYZ, LZ Spiked Ball and Chain.asm"
 		include	"Objects/58 SYZ Big Spiked Ball/58 SYZ Big Spiked Ball.asm"
@@ -1985,8 +1985,8 @@ Map_LWall:	include	"Objects/4E MZ Wall of Lava/maps/Wall of Lava.asm"
 		include	"Objects/71 Invisible Solid Barriers/71 Invisible Solid Barriers.asm"
 		include	"Objects/5D SLZ Fan/5D SLZ Fan.asm"
 		include	"Objects/5E SLZ Seesaw/5E SLZ Seesaw.asm"
-		include	"Objects/5F Badnik - Walking Bomb/5F Badnik - Walking Bomb.asm"
-		include	"Objects/60 Badnik - Orbinaut/60 Badnik - Orbinaut.asm"
+		include	"Objects/Badniks/Walking Bomb.asm"
+		include	"Objects/Badniks/Orbinaut.asm"
 		include	"Objects/16 LZ Harpoon/16 LZ Harpoon.asm"
 		include	"Objects/61 LZ Blocks/61 LZ Blocks.asm"
 		include	"Objects/62 LZ Gargoyle/62 LZ Gargoyle.asm"
@@ -2038,7 +2038,7 @@ Map_Splash:	include	"Objects/08 LZ Water Splash/maps/Water Splash.asm"
 
 ; ===========================================================================
 ; >>> Misc objects
-		include	"Objects/78 Badnik - Caterkiller/78 Badnik - Caterkiller.asm"
+		include	"Objects/Badniks/Caterkiller.asm"
 		include	"Objects/79 Lamppost/79 Lamppost.asm"
 		include	"Objects/7D Hidden Bonuses/7D Hidden Bonuses.asm"
 		include	"Objects/8A Credits and Sonic Team Presents/8A Credits and Sonic Team Presents.asm"
@@ -2394,37 +2394,37 @@ Nem_Girder:	binclude	"Objects/70 SBZ Girder Block/art/SBZ Crushing Girder.nem"
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - enemies
 ; ---------------------------------------------------------------------------
-Nem_BallHog:	binclude	"Objects/1E, 20 Badnik - Ball Hog and Cannonball/art/Enemy Ball Hog.nem"
+Nem_BallHog:	binclude	"Objects/Badniks/Cells/Ball Hog.nem"
 		even
-Nem_Crabmeat:	binclude	"Objects/1F Badnik - Crabmeat/art/Enemy Crabmeat.nem"
+Nem_Crabmeat:	binclude	"Objects/Badniks/Cells/Crabmeat.nem"
 		even
-Nem_Buzz:	binclude	"Objects/22, 23 Badnik - Buzz Bomber and Missile/art/Enemy Buzz Bomber.nem"
+Nem_Buzz:	binclude	"Objects/Badniks/Cells/Buzz Bomber.nem"
 		even
 Nem_UnkExplode:	binclude	"Objects/27, 3F Explosions/art/Unused - Explosion.nem"
 		even
-Nem_Burrobot:	binclude	"Objects/2D Badnik - Burrobot/art/Enemy Burrobot.nem"
+Nem_Burrobot:	binclude	"Objects/Badniks/Cells/Burrobot.nem"
 		even
-Nem_Chopper:	binclude	"Objects/2B Badnik - Chopper/art/Enemy Chopper.nem"
+Nem_Chopper:	binclude	"Objects/Badniks/Cells/Chopper.nem"
 		even
-Nem_Jaws:	binclude	"Objects/2C Badnik - Jaws/art/Enemy Jaws.nem"
+Nem_Jaws:	binclude	"Objects/Badniks/Cells/Jaws.nem"
 		even
-Nem_Roller:	binclude	"Objects/43 Badnik - Roller/art/Enemy Roller.nem"
+Nem_Roller:	binclude	"Objects/Badniks/Cells/Roller.nem"
 		even
-Nem_Motobug:	binclude	"Objects/40 Badnik - Moto Bug/art/Enemy Motobug.nem"
+Nem_Motobug:	binclude	"Objects/Badniks/Cells/Motobug.nem"
 		even
-Nem_Newtron:	binclude	"Objects/42 Badnik - Newtron/art/Enemy Newtron.nem"
+Nem_Newtron:	binclude	"Objects/Badniks/Cells/Newtron.nem"
 		even
-Nem_Yadrin:	binclude	"Objects/50 Badnik - Yadrin/art/Enemy Yadrin.nem"
+Nem_Yadrin:	binclude	"Objects/Badniks/Cells/Yadrin.nem"
 		even
-Nem_Basaran:	binclude	"Objects/55 Badnik - Basaran/art/Enemy Basaran.nem"
+Nem_Basaran:	binclude	"Objects/Badniks/Cells/Basaran.nem"
 		even
-Nem_Splats:	binclude	"Objects/shared/art/Enemy Splats.nem"
+Nem_Splats:	binclude	"Objects/Unused/Cells/Splats.nem"
 		even
-Nem_Bomb:	binclude	"Objects/5F Badnik - Walking Bomb/art/Enemy Bomb.nem"
+Nem_Bomb:	binclude	"Objects/Badniks/Cells/Bomb.nem"
 		even
-Nem_Orbinaut:	binclude	"Objects/60 Badnik - Orbinaut/art/Enemy Orbinaut.nem"
+Nem_Orbinaut:	binclude	"Objects/Badniks/Cells/Orbinaut.nem"
 		even
-Nem_Cater:	binclude	"Objects/78 Badnik - Caterkiller/art/Enemy Caterkiller.nem"
+Nem_Cater:	binclude	"Objects/Badniks/Cells/Caterkiller.nem"
 		even
 
 ; ---------------------------------------------------------------------------
