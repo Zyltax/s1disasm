@@ -1845,16 +1845,16 @@ WaitForVBlank:
 
 ; ===========================================================================
 ; >>> Various level objects
-		include	"Objects/11 GHZ Bridge/11 GHZ Bridge.asm"
+		include	"Objects/Zone/GHZ/Bridge.asm"
 		include	"Objects/15 Swinging Platforms/15 Swinging Platforms.asm" ; includes "MvSonicOnPtfm" subroutine
-		include	"Objects/17 GHZ Spiked Pole Helix/17 GHZ Spiked Pole Helix.asm"
+		include	"Objects/Zone/GHZ/Spiked Pole Helix.asm"
 		include	"Objects/18 Platforms/18 Platforms.asm"
-		include	"Objects/Unused/GHZ Ball.asm" ; this was the rolling GHZ ball in the prototype
+		include	"Objects/Unused/GHZ Ball.asm" ; prototype leftover
 Map_GBall:	include	"Objects/Unused/Mappings/GHZ Ball.map"
 		include	"Objects/1A, 53 Collapsing Ledges and Floors/1A, 53 Collapsing Ledges and Floors.asm" ; includes "SlopeObject_AssumeStoodOn" subroutine
-		include	"Objects/1C GHZ, SYZ Scenery/1C GHZ, SYZ Scenery.asm"
+		include	"Objects/Zone/Shared/Scenery.asm"
 		include	"Objects/Unused/Switch.asm"
-		include	"Objects/2A SBZ Small Door/2A SBZ Small Door.asm"
+		include	"Objects/Zone/SBZ/Small Door.asm"
 		include	"Objects/shared/sub SolidWall.asm"
 
 
@@ -1903,34 +1903,34 @@ Map_Flash:	include	"Objects/4B, 7C Giant Ring and Flash/maps/Ring Flash.asm"
 		include	"Objects/Badniks/Chopper.asm"
 		include	"Objects/Badniks/Jaws.asm"
 		include	"Objects/Badniks/Burrobot.asm"
-		include	"Objects/2F, 35 MZ Large Grassy Platforms and Burning Grass/2F, 35 MZ Large Grassy Platforms and Burning Grass.asm"
-Map_Fire:	include	"Objects/13, 14 MZ, SLZ Fire Balls and Maker/maps/Fireballs.asm"
-		include	"Objects/30 MZ Large Green Glass Blocks/30 MZ Large Green Glass Blocks.asm"
-		include	"Objects/31 MZ Chained Stompers/31 MZ Chained Stompers.asm"
+		include	"Objects/Zone/MZ/Large Grassy Platforms and Burning Grass.asm"
+Map_Fire:	include	"Objects/Zone/Shared/Mappings/Fireball.map"
+		include	"Objects/Zone/MZ/Large Green Glass Blocks.asm"
+		include	"Objects/Zone/MZ/Chained Stompers.asm"
 		include	"Objects/Unused/MZ Sideways Stomper.asm"
-Map_CStom:	include	"Objects/31 MZ Chained Stompers/maps/Chained Stompers.asm"
+Map_CStom:	include	"Objects/Zone/MZ/Mappings/Chained Stompers.map"
 Map_SStom:	include	"Objects/Unused/Mappings/MZ Sideways Stomper.map"
 		include	"Objects/32 Button/32 Button.asm"
-		include	"Objects/33 MZ, LZ Pushable Blocks/33 MZ, LZ Pushable Blocks.asm"
+		include	"Objects/Zone/Shared/Pushable Blocks.asm"
 
 
 ; ===========================================================================
 ; >>> Title card objects
 		include	"Objects/Cards/Title Cards.asm"
-		include	"Objects/39 Game Over/39 Game Over.asm"
+		include	"Objects/Cards/Game Over Text.asm"
 		include	"Objects/Cards/Got Through Card.asm"
-		include	"Objects/7E, 7F Special Stage Results and Chaos Emeralds/7E, 7F Special Stage Results and Chaos Emeralds.asm"
-		include	"Objects/Cards/Mappings/Title Cards.asm" ; includes "Map_Card", "Map_Over", "Map_Got", and "Map_SSR"
-Map_SSRC:	include	"Objects/7E, 7F Special Stage Results and Chaos Emeralds/maps/SS Result Chaos Emeralds.asm"
+		include	"Objects/Cards/Special Stage Results.asm"
+		include	"Objects/Cards/Mappings/Title Cards.map" ; includes "Map_Card", "Map_Over", "Map_Got", and "Map_SSR"
+Map_SSRC:	include	"Objects/Cards/Mappings/Emeralds (Results).map"
 
 
 ; ===========================================================================
 ; >>> More level objects
 		include	"Objects/36 Spikes/36 Spikes.asm"
-		include	"Objects/3B GHZ Purple Rock/3B GHZ Purple Rock.asm"
-		include	"Objects/49 GHZ Waterfall Sound/49 GHZ Waterfall Sound.asm"
-Map_PRock:	include	"Objects/3B GHZ Purple Rock/maps/Purple Rock.asm"
-		include	"Objects/3C GHZ, SLZ Smashable Wall/3C GHZ, SLZ Smashable Wall.asm" ; includes SmashObject
+		include	"Objects/Zone/GHZ/Purple Rock.asm"
+		include	"Objects/Zone/GHZ/Waterfall Sound.asm"
+Map_PRock:	include	"Objects/Zone/GHZ/Mappings/Purple Rock.map"
+		include	"Objects/Zone/Shared/Breakable Wall.asm" ; includes SmashObject
 
 
 ; ===========================================================================
@@ -1951,48 +1951,48 @@ Map_PRock:	include	"Objects/3B GHZ Purple Rock/maps/Purple Rock.asm"
 		include	"Objects/41 Springs/41 Springs.asm"
 		include	"Objects/Badniks/Newtron.asm"
 		include	"Objects/Badniks/Roller.asm"
-		include	"Objects/44 GHZ Edge Walls/44 GHZ Edge Walls.asm"
-		include	"Objects/13, 14 MZ, SLZ Fire Balls and Maker/13, 14 MZ, SLZ Fire Balls and Maker.asm"
-		include	"Objects/6D SBZ Flamethrower/6D SBZ Flamethrower.asm"
-		include	"Objects/46 MZ Bricks/46 MZ Bricks.asm"
-		include	"Objects/12 SYZ Search Light/12 SYZ Search Light.asm"
-		include	"Objects/47 SYZ Bumper/47 SYZ Bumper.asm"
+		include	"Objects/Zone/GHZ/Edge Walls.asm"
+		include	"Objects/Zone/Shared/Fireball and Maker.asm"
+		include	"Objects/Zone/SBZ/Flamethrower.asm"
+		include	"Objects/Zone/MZ/Bricks.asm"
+		include	"Objects/Zone/SYZ/Search Light.asm"
+		include	"Objects/Zone/SYZ/Bumper.asm"
 		include	"Objects/0D Signpost/0D Signpost.asm" ; includes "GotThroughAct" subroutine
-		include	"Objects/4C, 4D MZ Lava Geyser and Maker/4C, 4D MZ Lava Geyser and Maker.asm"
-		include	"Objects/4E MZ Wall of Lava/4E MZ Wall of Lava.asm"
-		include	"Objects/54 MZ Invisible Lava Tag/54 MZ Invisible Lava Tag.asm"
-		include	"Objects/4C, 4D MZ Lava Geyser and Maker/anim/Lava Geyser.asm"
-		include	"Objects/4E MZ Wall of Lava/anim/Wall of Lava.asm"
-Map_Geyser:	include	"Objects/4C, 4D MZ Lava Geyser and Maker/maps/Lava Geyser.asm"
-Map_LWall:	include	"Objects/4E MZ Wall of Lava/maps/Wall of Lava.asm"
+		include	"Objects/Zone/MZ/Lava Geyser and Maker.asm"
+		include	"Objects/Zone/MZ/Wall of Lava.asm"
+		include	"Objects/Zone/MZ/Invisible Lava Tag.asm"
+		include	"Objects/Zone/MZ/Animations/Lava Geyser.ani"
+		include	"Objects/Zone/MZ/Animations/Wall of Lava.ani"
+Map_Geyser:	include	"Objects/Zone/MZ/Mappings/Lava Geyser.map"
+Map_LWall:	include	"Objects/Zone/MZ/Mappings/Wall of Lava.map"
 		include	"Objects/Badniks/Moto Bug.asm" ; includes "Objects/shared/sub RememberState.asm" subroutine
 		include	"Objects/Unused/Splats.asm" ; this was Splats in the prototype
 		include	"Objects/Badniks/Yadrin.asm"
 		include	"Objects/shared/sub SolidObject.asm"
-		include	"Objects/51 MZ Smashable Green Block/51 MZ Smashable Green Block.asm"
+		include	"Objects/Zone/MZ/Smashable Green Block.asm"
 		include	"Objects/52 Moving Blocks/52 Moving Blocks.asm"
 		include	"Objects/Badniks/Basaran.asm"
-		include	"Objects/56 SYZ, SLZ Floating Blocks and LZ Doors/56 SYZ, SLZ Floating Blocks and LZ Doors.asm"
-		include	"Objects/57 SYZ, LZ Spiked Ball and Chain/57 SYZ, LZ Spiked Ball and Chain.asm"
-		include	"Objects/58 SYZ Big Spiked Ball/58 SYZ Big Spiked Ball.asm"
-		include	"Objects/59 SLZ Elevators/59 SLZ Elevators.asm"
-		include	"Objects/5A SLZ Circling Platform/5A SLZ Circling Platform.asm"
-		include	"Objects/5B SLZ Staircase/5B SLZ Staircase.asm"
-		include	"Objects/5C SLZ Foreground Pylon/5C SLZ Foreground Pylon.asm"
-		include	"Objects/1B LZ Water Surface/1B LZ Water Surface.asm"
-		include	"Objects/0B LZ Pole that Breaks/0B LZ Pole that Breaks.asm"
-		include	"Objects/0C LZ Flapping Door/0C LZ Flapping Door.asm"
+		include	"Objects/Zone/Shared/Floating Blocks and Doors.asm"
+		include	"Objects/Zone/Shared/Spiked Ball and Chain.asm"
+		include	"Objects/Zone/SYZ/Big Spiked Ball.asm"
+		include	"Objects/Zone/SLZ/Elevators.asm"
+		include	"Objects/Zone/SLZ/Circling Platform.asm"
+		include	"Objects/Zone/SLZ/Staircase.asm"
+		include	"Objects/Zone/SLZ/Foreground Pylon.asm"
+		include	"Objects/Zone/LZ/Water Surface.asm"
+		include	"Objects/Zone/LZ/Breakable Pole.asm"
+		include	"Objects/Zone/LZ/Flapping Door.asm"
 		include	"Objects/71 Invisible Solid Barriers/71 Invisible Solid Barriers.asm"
-		include	"Objects/5D SLZ Fan/5D SLZ Fan.asm"
-		include	"Objects/5E SLZ Seesaw/5E SLZ Seesaw.asm"
+		include	"Objects/Zone/SLZ/Fan.asm"
+		include	"Objects/Zone/SLZ/Seesaw.asm"
 		include	"Objects/Badniks/Walking Bomb.asm"
 		include	"Objects/Badniks/Orbinaut.asm"
-		include	"Objects/16 LZ Harpoon/16 LZ Harpoon.asm"
-		include	"Objects/61 LZ Blocks/61 LZ Blocks.asm"
-		include	"Objects/62 LZ Gargoyle/62 LZ Gargoyle.asm"
-		include	"Objects/63 LZ Conveyor/63 LZ Conveyor.asm"
-		include	"Objects/64 LZ Air Bubbles/64 LZ Air Bubbles.asm"
-		include	"Objects/65 LZ Waterfalls/65 LZ Waterfalls.asm"
+		include	"Objects/Zone/LZ/Harpoon.asm"
+		include	"Objects/Zone/LZ/Block.asm"
+		include	"Objects/Zone/LZ/Gargoyle.asm"
+		include	"Objects/Zone/LZ/Conveyor.asm"
+		include	"Objects/Zone/LZ/Air Bubble.asm"
+		include	"Objects/Zone/LZ/Waterfall.asm"
 
 
 ; ===========================================================================
@@ -2002,16 +2002,16 @@ Map_LWall:	include	"Objects/4E MZ Wall of Lava/maps/Wall of Lava.asm"
 
 ; ===========================================================================
 ; >>> Various unique objects
-		include	"Objects/0A LZ Drowning Countdown/0A LZ Drowning Countdown.asm" ; includes ResumeMusic
+		include	"Objects/Zone/LZ/Drowning Countdown.asm" ; includes ResumeMusic
 		include	"Objects/38 Shield and Invincibility/38 Shield and Invincibility.asm"
 		include	"Objects/Unused/Special Stage Entry.asm"
-		include	"Objects/08 LZ Water Splash/08 LZ Water Splash.asm"
+		include	"Objects/Zone/LZ/Water Splash.asm"
 		include	"Objects/38 Shield and Invincibility/anim/Shield and Invincibility.asm"
 Map_Shield:	include	"Objects/38 Shield and Invincibility/maps/Shield and Invincibility.asm"
 		include	"Objects/Unused/Animations/Special Stage Entry.ani"
 Map_Vanish:	include	"Objects/Unused/Mappings/Special Stage Entry.map"
-		include	"Objects/08 LZ Water Splash/anim/Water Splash.asm"
-Map_Splash:	include	"Objects/08 LZ Water Splash/maps/Water Splash.asm"
+		include	"Objects/Zone/LZ/Animations/Water Splash.ani"
+Map_Splash:	include	"Objects/Zone/LZ/Mappings/Water Splash.map"
 
 
 ; ===========================================================================
@@ -2024,24 +2024,24 @@ Map_Splash:	include	"Objects/08 LZ Water Splash/maps/Water Splash.asm"
 
 ; ===========================================================================
 ; >>> SBZ level objects
-		include	"Objects/66 SBZ Rotating Junction/66 SBZ Rotating Junction.asm"
-		include	"Objects/67 SBZ Running Disc/67 SBZ Running Disc.asm"
-		include	"Objects/68 SBZ Conveyor Belt/68 SBZ Conveyor Belt.asm"
-		include	"Objects/69 SBZ Spinning Platforms and Trapdoors/69 SBZ Spinning Platforms and Trapdoors.asm"
-		include	"Objects/6A SBZ Saws and Pizza Cutters/6A SBZ Saws and Pizza Cutters.asm"
-		include	"Objects/6B SBZ Stomper and Sliding Door/6B SBZ Stomper and Sliding Door.asm"
-		include	"Objects/6C SBZ Vanishing Platforms/6C SBZ Vanishing Platforms.asm"
-		include	"Objects/6E SBZ Electrocuter/6E SBZ Electrocuter.asm"
-		include	"Objects/6F SBZ Spin Platform Conveyor/6F SBZ Spin Platform Conveyor.asm"
-		include	"Objects/70 SBZ Girder Block/70 SBZ Girder Block.asm"
-		include	"Objects/72 SBZ Teleporter/72 SBZ Teleporter.asm"
+		include	"Objects/Zone/SBZ/Rotating Junction.asm"
+		include	"Objects/Zone/SBZ/Running Disc.asm"
+		include	"Objects/Zone/SBZ/Conveyor Belt.asm"
+		include	"Objects/Zone/SBZ/Spinning Platforms and Trapdoors.asm"
+		include	"Objects/Zone/SBZ/Saws and Pizza Cutters.asm"
+		include	"Objects/Zone/SBZ/Stomper and Sliding Door.asm"
+		include	"Objects/Zone/SBZ/Vanishing Platforms.asm"
+		include	"Objects/Zone/SBZ/Electrocuter.asm"
+		include	"Objects/Zone/SBZ/Spin Platform Conveyor.asm"
+		include	"Objects/Zone/SBZ/Girder Block.asm"
+		include	"Objects/Zone/SBZ/Teleporter.asm"
 
 ; ===========================================================================
 ; >>> Misc objects
 		include	"Objects/Badniks/Caterkiller.asm"
 		include	"Objects/79 Lamppost/79 Lamppost.asm"
 		include	"Objects/7D Hidden Bonuses/7D Hidden Bonuses.asm"
-		include	"Objects/8A Credits and Sonic Team Presents/8A Credits and Sonic Team Presents.asm"
+		include	"Objects/Cards/Credits.asm"
 
 
 ; ===========================================================================
@@ -2054,7 +2054,7 @@ Map_BossItems:	include	"Objects/Bosses/Mappings/Boss Items.map"
 		include	"Objects/Bosses/Egg Scorcher.asm"
 		include	"Objects/Bosses/Egg Spiker.asm"
 		include	"Objects/Bosses/Egg Stinger.asm"
-		include	"Objects/82, 83 SBZ Eggman Cutscene and Crumbling Floor/82, 83 SBZ Eggman Cutscene and Crumbling Floor.asm"
+		include	"Objects/Zone/SBZ/Eggman Cutscene and Crumbling Floor.asm"
 		include	"Objects/Bosses/Egg Crusher.asm"
 		include	"Objects/3E Prison Capsule/3E Prison Capsule.asm"
 
@@ -2093,9 +2093,9 @@ Map_SS_Chaos:	include	"Game Modes/Special Stage/maps/SS Chaos Emeralds.asm"
 		include	"Objects/shared/sub AddPoints.asm"
 		include	"Libraries/HUD Update.asm" ; includes "ContScrCounter" subroutine
 
-Art_Hud:	binclude "Objects/Cards/Cells/HUD/Numerals.unc" ; 8x16 pixel numbers on HUD
+Art_Hud:	binclude "Objects/Cards/Cells/Numerals.unc" ; 8x16 pixel numbers on HUD
 		even
-Art_LivesNums:	binclude "Objects/Cards/Cells/HUD/Life Numerals.unc" ; 8x8 pixel numbers on lives counter
+Art_LivesNums:	binclude "Objects/Cards/Cells/Life Numerals.unc" ; 8x8 pixel numbers on lives counter
 		even
 
 
@@ -2252,7 +2252,7 @@ Nem_Stalk:	binclude	"Zones/Green Hill Zone/art/GHZ Flower Stalk.nem"
 		even
 Nem_Swing:	binclude	"Objects/15 Swinging Platforms/art/GHZ Swinging Platform.nem"
 		even
-Nem_Bridge:	binclude	"Objects/11 GHZ Bridge/art/GHZ Bridge.nem"
+Nem_Bridge:	binclude	"Objects/Zone/GHZ/Cells/Bridge.nem"
 		even
 Nem_GhzUnkBlock:binclude	"Zones/Green Hill Zone/art/Unused - GHZ Block.nem"
 		even
@@ -2262,49 +2262,49 @@ Nem_Spikes:	binclude	"Objects/36 Spikes/art/Spikes.nem"
 		even
 Nem_GhzLog:	binclude	"Zones/Green Hill Zone/art/Unused - GHZ Log.nem"
 		even
-Nem_SpikePole:	binclude	"Objects/17 GHZ Spiked Pole Helix/art/GHZ Spiked Log.nem"
+Nem_SpikePole:	binclude	"Objects/Zone/GHZ/Cells/Spiked Log.nem"
 		even
-Nem_PplRock:	binclude	"Objects/3B GHZ Purple Rock/art/GHZ Purple Rock.nem"
+Nem_PplRock:	binclude	"Objects/Zone/GHZ/Cells/Purple Rock.nem"
 		even
-Nem_GhzWall1:	binclude	"Objects/3C GHZ, SLZ Smashable Wall/art/GHZ Breakable Wall.nem"
+Nem_GhzWall1:	binclude	"Objects/Zone/GHZ/Cells/Breakable Wall.nem"
 		even
-Nem_GhzWall2:	binclude	"Objects/44 GHZ Edge Walls/art/GHZ Edge Wall.nem"
+Nem_GhzWall2:	binclude	"Objects/Zone/GHZ/Cells/Edge Wall.nem"
 		even
 
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - LZ stuff
 ; ---------------------------------------------------------------------------
-Nem_Water:	binclude	"Objects/1B LZ Water Surface/art/LZ Water Surface.nem"
+Nem_Water:	binclude	"Objects/Zone/LZ/Cells/Water Surface.nem"
 		even
-Nem_Splash:	binclude	"Objects/08 LZ Water Splash/art/LZ Water & Splashes.nem"
+Nem_Splash:	binclude	"Objects/Zone/LZ/Cells/Water & Splashes.nem"
 		even
-Nem_LzSpikeBall:binclude	"Objects/57 SYZ, LZ Spiked Ball and Chain/art/LZ Spiked Ball & Chain.nem"
+Nem_LzSpikeBall:binclude	"Objects/Zone/LZ/Cells/Spiked Ball and Chain.nem"
 		even
-Nem_FlapDoor:	binclude	"Objects/0C LZ Flapping Door/art/LZ Flapping Door.nem"
+Nem_FlapDoor:	binclude	"Objects/Zone/LZ/Cells/Flapping Door.nem"
 		even
-Nem_Bubbles:	binclude	"Objects/64 LZ Air Bubbles/art/LZ Bubbles & Countdown.nem"
+Nem_Bubbles:	binclude	"Objects/Zone/LZ/Cells/Bubbles & Countdown.nem"
 		even
-Nem_LzBlock3:	binclude	"Objects/61 LZ Blocks/art/LZ 32x16 Block.nem"
+Nem_LzBlock3:	binclude	"Objects/Zone/LZ/Cells/32x16 Block.nem"
 		even
-Nem_LzDoor1:	binclude	"Objects/56 SYZ, SLZ Floating Blocks and LZ Doors/art/LZ Vertical Door.nem"
+Nem_LzDoor1:	binclude	"Objects/Zone/LZ/Cells/Vertical Door.nem"
 		even
-Nem_Harpoon:	binclude	"Objects/16 LZ Harpoon/art/LZ Harpoon.nem"
+Nem_Harpoon:	binclude	"Objects/Zone/LZ/Cells/Harpoon.nem"
 		even
-Nem_LzPole:	binclude	"Objects/0B LZ Pole that Breaks/art/LZ Breakable Pole.nem"
+Nem_LzPole:	binclude	"Objects/Zone/LZ/Cells/Breakable Pole.nem"
 		even
-Nem_LzDoor2:	binclude	"Objects/56 SYZ, SLZ Floating Blocks and LZ Doors/art/LZ Horizontal Door.nem"
+Nem_LzDoor2:	binclude	"Objects/Zone/LZ/Cells/Horizontal Door.nem"
 		even
-Nem_LzWheel:	binclude	"Objects/63 LZ Conveyor/art/LZ Wheel.nem"
+Nem_LzWheel:	binclude	"Objects/Zone/LZ/Cells/Wheel.nem"
 		even
-Nem_Gargoyle:	binclude	"Objects/62 LZ Gargoyle/art/LZ Gargoyle & Fireball.nem"
+Nem_Gargoyle:	binclude	"Objects/Zone/LZ/Cells/Gargoyle & Fireball.nem"
 		even
-Nem_LzBlock2:	binclude	"Objects/61 LZ Blocks/art/LZ Blocks.nem"
+Nem_LzBlock2:	binclude	"Objects/Zone/LZ/Cells/Blocks.nem"
 		even
 Nem_LzPlatfm:	binclude	"Zones/Labyrinth Zone/art/LZ Rising Platform.nem"
 		even
 Nem_Cork:	binclude	"Zones/Labyrinth Zone/art/LZ Cork.nem"
 		even
-Nem_LzBlock1:	binclude	"Objects/61 LZ Blocks/art/LZ 32x32 Block.nem"
+Nem_LzBlock1:	binclude	"Objects/Zone/LZ/Cells/32x32 Block.nem"
 		even
 
 ; ---------------------------------------------------------------------------
@@ -2314,15 +2314,15 @@ Nem_MzMetal:	binclude	"Zones/Marble Zone/art/MZ Metal Blocks.nem"
 		even
 Nem_MzSwitch:	binclude	"Objects/32 Button/art/MZ Switch.nem"
 		even
-Nem_MzGlass:	binclude	"Objects/30 MZ Large Green Glass Blocks/art/MZ Green Glass Block.nem"
+Nem_MzGlass:	binclude	"Objects/Zone/MZ/Cells/Green Glass Block.nem"
 		even
 Nem_UnkGrass:	binclude	"Zones/Green Hill Zone/art/Unused - Grass.nem"
 		even
-Nem_MzFire:	binclude	"Objects/13, 14 MZ, SLZ Fire Balls and Maker/art/Fireballs.nem"
+Nem_MzFire:	binclude	"Objects/Zone/Shared/Cells/Fireballs.nem"
 		even
 Nem_Lava:	binclude	"Zones/Marble Zone/art/MZ Lava.nem"
 		even
-Nem_MzBlock:	binclude	"Objects/33 MZ, LZ Pushable Blocks/art/MZ Green Pushable Block.nem"
+Nem_MzBlock:	binclude	"Objects/Zone/MZ/Cells/Green Pushable Block.nem"
 		even
 Nem_MzUnkBlock:	binclude	"Zones/Marble Zone/art/Unused - MZ Background.nem"
 		even
@@ -2330,65 +2330,65 @@ Nem_MzUnkBlock:	binclude	"Zones/Marble Zone/art/Unused - MZ Background.nem"
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - SLZ stuff
 ; ---------------------------------------------------------------------------
-Nem_Seesaw:	binclude	"Objects/5E SLZ Seesaw/art/SLZ Seesaw.nem"
+Nem_Seesaw:	binclude	"Objects/Zone/SLZ/Cells/Seesaw.nem"
 		even
 Nem_SlzSpike:	binclude	"Zones/Star Light Zone/art/SLZ Little Spikeball.nem"
 		even
-Nem_Fan:	binclude	"Objects/5D SLZ Fan/art/SLZ Fan.nem"
+Nem_Fan:	binclude	"Objects/Zone/SLZ/Cells/Fan.nem"
 		even
-Nem_SlzWall:	binclude	"Objects/3C GHZ, SLZ Smashable Wall/art/SLZ Breakable Wall.nem"
+Nem_SlzWall:	binclude	"Objects/Zone/SLZ/Cells/Breakable Wall.nem"
 		even
-Nem_Pylon:	binclude	"Objects/5C SLZ Foreground Pylon/art/SLZ Pylon.nem"
+Nem_Pylon:	binclude	"Objects/Zone/SLZ/Cells/Pylon.nem"
 		even
 Nem_SlzSwing:	binclude	"Objects/15 Swinging Platforms/art/SLZ Swinging Platform.nem"
 		even
 Nem_SlzBlock:	binclude	"Zones/Star Light Zone/art/SLZ 32x32 Block.nem"
 		even
-Nem_SlzCannon:	binclude	"Objects/13, 14 MZ, SLZ Fire Balls and Maker/art/SLZ Cannon.nem"
+Nem_SlzCannon:	binclude	"Objects/Zone/SLZ/Cells/Cannon.nem"
 		even
 
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - SYZ stuff
 ; ---------------------------------------------------------------------------
-Nem_Bumper:	binclude	"Objects/47 SYZ Bumper/art/SYZ Bumper.nem"
+Nem_Bumper:	binclude	"Objects/Zone/SYZ/Cells/Bumper.nem"
 		even
-Nem_SyzSpike2:	binclude	"Objects/57 SYZ, LZ Spiked Ball and Chain/art/SYZ Small Spikeball.nem"
+Nem_SyzSpike2:	binclude	"Objects/Zone/SYZ/Cells/Small Spikeball.nem"
 		even
 Nem_LzSwitch:	binclude	"Objects/32 Button/art/Switch.nem"
 		even
-Nem_SyzSpike1:	binclude	"Objects/58 SYZ Big Spiked Ball/art/SYZ Large Spikeball.nem"
+Nem_SyzSpike1:	binclude	"Objects/Zone/SYZ/Cells/Large Spikeball.nem"
 		even
 
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - SBZ stuff
 ; ---------------------------------------------------------------------------
-Nem_SbzWheel1:	binclude	"Objects/67 SBZ Running Disc/art/SBZ Running Disc.nem"
+Nem_SbzWheel1:	binclude	"Objects/Zone/SBZ/Cells/Running Disc.nem"
 		even
-Nem_SbzWheel2:	binclude	"Objects/66 SBZ Rotating Junction/art/SBZ Junction Wheel.nem"
+Nem_SbzWheel2:	binclude	"Objects/Zone/SBZ/Cells/Junction Wheel.nem"
 		even
-Nem_Cutter:	binclude	"Objects/6A SBZ Saws and Pizza Cutters/art/SBZ Pizza Cutter.nem"
+Nem_Cutter:	binclude	"Objects/Zone/SBZ/Cells/Pizza Cutter.nem"
 		even
-Nem_Stomper:	binclude	"Objects/6B SBZ Stomper and Sliding Door/art/SBZ Stomper.nem"
+Nem_Stomper:	binclude	"Objects/Zone/SBZ/Cells/Stomper.nem"
 		even
-Nem_SpinPform:	binclude	"Objects/69 SBZ Spinning Platforms and Trapdoors/art/SBZ Spinning Platform.nem"
+Nem_SpinPform:	binclude	"Objects/Zone/SBZ/Cells/Spinning Platform.nem"
 		even
-Nem_TrapDoor:	binclude	"Objects/69 SBZ Spinning Platforms and Trapdoors/art/SBZ Trapdoor.nem"
+Nem_TrapDoor:	binclude	"Objects/Zone/SBZ/Cells/Trapdoor.nem"
 		even
 Nem_SbzFloor:	binclude	"Objects/1A, 53 Collapsing Ledges and Floors/art/SBZ Collapsing Floor.nem"
 		even
-Nem_Electric:	binclude	"Objects/6E SBZ Electrocuter/art/SBZ Electrocuter.nem"
+Nem_Electric:	binclude	"Objects/Zone/SBZ/Cells/Electrocuter.nem"
 		even
-Nem_SbzBlock:	binclude	"Objects/6C SBZ Vanishing Platforms/art/SBZ Vanishing Block.nem"
+Nem_SbzBlock:	binclude	"Objects/Zone/SBZ/Cells/Vanishing Block.nem"
 		even
-Nem_FlamePipe:	binclude	"Objects/6D SBZ Flamethrower/art/SBZ Flaming Pipe.nem"
+Nem_FlamePipe:	binclude	"Objects/Zone/SBZ/Cells/Flaming Pipe.nem"
 		even
-Nem_SbzDoor1:	binclude	"Objects/2A SBZ Small Door/art/SBZ Small Vertical Door.nem"
+Nem_SbzDoor1:	binclude	"Objects/Zone/SBZ/Cells/Small Vertical Door.nem"
 		even
 Nem_SlideFloor:	binclude	"Zones/Scrap Brain Zone/art/SBZ Sliding Floor Trap.nem"
 		even
-Nem_SbzDoor2:	binclude	"Objects/6B SBZ Stomper and Sliding Door/art/SBZ Large Horizontal Door.nem"
+Nem_SbzDoor2:	binclude	"Objects/Zone/SBZ/Cells/Large Horizontal Door.nem"
 		even
-Nem_Girder:	binclude	"Objects/70 SBZ Girder Block/art/SBZ Crushing Girder.nem"
+Nem_Girder:	binclude	"Objects/Zone/SBZ/Cells/Crushing Girder.nem"
 		even
 
 ; ---------------------------------------------------------------------------
@@ -2432,9 +2432,9 @@ Nem_Cater:	binclude	"Objects/Badniks/Cells/Caterkiller.nem"
 ; ---------------------------------------------------------------------------
 Nem_TitleCard:	binclude	"Objects/Cards/Cells/Title Cards.nem"
 		even
-Nem_Hud:	binclude	"Objects/Cards/Cells/HUD/Text.nem" ; HUD (rings, time, score)
+Nem_Hud:	binclude	"Objects/Cards/Cells/HUD Text.nem" ; HUD (rings, time, score)
 		even
-Nem_Lives:	binclude	"Objects/Cards/Cells/HUD/Life Icon.nem"
+Nem_Lives:	binclude	"Objects/Cards/Cells/Life Icon.nem"
 		even
 Nem_Ring:	binclude	"Objects/25, 37 Rings/art/Rings.nem"
 		even
@@ -2444,7 +2444,7 @@ Nem_Explode:	binclude	"Objects/27, 3F Explosions/art/Explosion.nem"
 		even
 Nem_Points:	binclude	"Objects/28, 29 Animals and Points/art/Points.nem" ; points from destroyed enemy or object
 		even
-Nem_GameOver:	binclude	"Objects/39 Game Over/art/Game Over.nem" ; game over / time over
+Nem_GameOver:	binclude	"Objects/Cards/Cells/Game Over.nem" ; game over / time over
 		even
 Nem_HSpring:	binclude	"Objects/41 Springs/art/Spring Horizontal.nem"
 		even

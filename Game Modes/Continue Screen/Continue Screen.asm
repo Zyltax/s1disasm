@@ -104,6 +104,6 @@ Cont_GotoLevel:
 ; ===========================================================================
 
 ; >>> Objects for the continue screen
-	include	"Objects/80, 81 Continue Screen Elements and Sonic/80, 81 Continue Screen Elements and Sonic.asm"
+	include	"Objects/Cards/Continue Screen.asm"
 
 

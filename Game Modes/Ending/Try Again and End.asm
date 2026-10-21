@@ -68,7 +68,7 @@ TryAg_Exit:		; exit end screen and restart the gam
 ; ===========================================================================
 
 ; >>> Objects on final screen
-	include	"Objects/8B, 8C Try Again, End Eggman, End Emeralds/8B, 8C Try Again, End Eggman, End Emeralds.asm"
+	include	"Objects/Cards/End Screen.asm"
 
 
 ; ===========================================================================
