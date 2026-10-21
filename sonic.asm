@@ -1846,12 +1846,12 @@ WaitForVBlank:
 ; ===========================================================================
 ; >>> Various level objects
 		include	"Objects/Zone/GHZ/Bridge.asm"
-		include	"Objects/15 Swinging Platforms/15 Swinging Platforms.asm" ; includes "MvSonicOnPtfm" subroutine
+		include	"Objects/Zone/Shared/Swinging Platform and Spike.asm" ; includes "MvSonicOnPtfm" subroutine
 		include	"Objects/Zone/GHZ/Spiked Pole Helix.asm"
-		include	"Objects/18 Platforms/18 Platforms.asm"
+		include	"Objects/Zone/Shared/Platform.asm"
 		include	"Objects/Unused/GHZ Ball.asm" ; prototype leftover
 Map_GBall:	include	"Objects/Unused/Mappings/GHZ Ball.map"
-		include	"Objects/1A, 53 Collapsing Ledges and Floors/1A, 53 Collapsing Ledges and Floors.asm" ; includes "SlopeObject_AssumeStoodOn" subroutine
+		include	"Objects/Zone/Shared/Collapsing Geometry.asm" ; includes "SlopeObject_AssumeStoodOn" subroutine
 		include	"Objects/Zone/Shared/Scenery.asm"
 		include	"Objects/Unused/Switch.asm"
 		include	"Objects/Zone/SBZ/Small Door.asm"
@@ -1862,40 +1862,40 @@ Map_GBall:	include	"Objects/Unused/Mappings/GHZ Ball.map"
 ; >>> Badniks, explosions, and Badnik-related objects
 		include	"Objects/Badniks/Ball Hog and Cannonball.asm"
 		include	"Objects/Unused/Small Explosion.asm"
-		include	"Objects/27, 3F Explosions/27, 3F Explosions.asm"
+		include	"Objects/Effects/Explosion.asm"
 		include	"Objects/Badniks/Animations/Ball Hog.ani"
 Map_Hog:	include	"Objects/Badniks/Mappings/Ball Hog.map"
 Map_UnkExplode:	include	"Objects/Unused/Mappings/Small Explosion.map"
-		include	"Objects/27, 3F Explosions/maps/Explosions.asm"
-		include	"Objects/28, 29 Animals and Points/28, 29 Animals and Points.asm"
+		include	"Objects/Effects/Mappings/Explosion.map"
+		include	"Objects/Effects/Animal and Points.asm"
 		include	"Objects/Badniks/Crabmeat.asm"
 		include	"Objects/Badniks/Buzz Bomber and Missile.asm"
 
 
 ; ===========================================================================
 ; >>> Rings
-		include	"Objects/25, 37 Rings/25, 37 Rings.asm"
-		include	"Objects/4B, 7C Giant Ring and Flash/4B, 7C Giant Ring and Flash.asm"
-		include	"Objects/25, 37 Rings/anim/Rings.asm"
+		include	"Objects/Global/Ring.asm"
+		include	"Objects/Global/Giant Ring.asm"
+		include	"Objects/Global/Animations/Ring.ani"
 Map_Ring:   if Revision=0
-		include	"Objects/25, 37 Rings/maps/Rings (REV00).asm"
+		include	"Objects/Global/Mappings/Ring (REV00).map"
 	    else
 		; REV01 added an extra blank frame, possibly to mitigate
 		; rings occasionally popping up in the sign post sparkles
-		include	"Objects/25, 37 Rings/maps/Rings (REV01).asm"
+		include	"Objects/Global/Mappings/Ring (REV01).map"
 	    endif
-Map_GRing:	include	"Objects/4B, 7C Giant Ring and Flash/maps/Giant Ring.asm"
-Map_Flash:	include	"Objects/4B, 7C Giant Ring and Flash/maps/Ring Flash.asm"
+Map_GRing:	include	"Objects/Global/Mappings/Giant Ring.map"
+Map_Flash:	include	"Objects/Global/Mappings/Giant Ring Flash.map"
 
 
 ; ===========================================================================
 ; >>> Monitors
-		include	"Objects/26, 2E Monitors and Power-Ups/26, 2E Monitors and Power-Ups.asm"
+		include	"Objects/Global/Monitor.asm"
 
 
 ; ===========================================================================
 ; >>> Title screen objects (includes AnimateSprite)
-		include	"Objects/0E, 0F Title Screen - Sonic, Press Start, TM/0E, 0F Title Screen - Sonic, Press Start, TM.asm"
+		include	"Objects/Cards/Title Screen Pieces.asm"
 
 
 ; ===========================================================================
@@ -1910,7 +1910,7 @@ Map_Fire:	include	"Objects/Zone/Shared/Mappings/Fireball.map"
 		include	"Objects/Unused/MZ Sideways Stomper.asm"
 Map_CStom:	include	"Objects/Zone/MZ/Mappings/Chained Stompers.map"
 Map_SStom:	include	"Objects/Unused/Mappings/MZ Sideways Stomper.map"
-		include	"Objects/32 Button/32 Button.asm"
+		include	"Objects/Zone/Shared/Button.asm"
 		include	"Objects/Zone/Shared/Pushable Blocks.asm"
 
 
@@ -1926,7 +1926,7 @@ Map_SSRC:	include	"Objects/Cards/Mappings/Emeralds (Results).map"
 
 ; ===========================================================================
 ; >>> More level objects
-		include	"Objects/36 Spikes/36 Spikes.asm"
+		include	"Objects/Global/Spike.asm"
 		include	"Objects/Zone/GHZ/Purple Rock.asm"
 		include	"Objects/Zone/GHZ/Waterfall Sound.asm"
 Map_PRock:	include	"Objects/Zone/GHZ/Mappings/Purple Rock.map"
@@ -1948,7 +1948,7 @@ Map_PRock:	include	"Objects/Zone/GHZ/Mappings/Purple Rock.map"
 
 ; ===========================================================================
 ; >>> More level objects
-		include	"Objects/41 Springs/41 Springs.asm"
+		include	"Objects/Global/Spring.asm"
 		include	"Objects/Badniks/Newtron.asm"
 		include	"Objects/Badniks/Roller.asm"
 		include	"Objects/Zone/GHZ/Edge Walls.asm"
@@ -1957,7 +1957,7 @@ Map_PRock:	include	"Objects/Zone/GHZ/Mappings/Purple Rock.map"
 		include	"Objects/Zone/MZ/Bricks.asm"
 		include	"Objects/Zone/SYZ/Search Light.asm"
 		include	"Objects/Zone/SYZ/Bumper.asm"
-		include	"Objects/0D Signpost/0D Signpost.asm" ; includes "GotThroughAct" subroutine
+		include	"Objects/Global/Signpost.asm" ; includes "GotThroughAct" subroutine
 		include	"Objects/Zone/MZ/Lava Geyser and Maker.asm"
 		include	"Objects/Zone/MZ/Wall of Lava.asm"
 		include	"Objects/Zone/MZ/Invisible Lava Tag.asm"
@@ -1970,7 +1970,7 @@ Map_LWall:	include	"Objects/Zone/MZ/Mappings/Wall of Lava.map"
 		include	"Objects/Badniks/Yadrin.asm"
 		include	"Objects/shared/sub SolidObject.asm"
 		include	"Objects/Zone/MZ/Smashable Green Block.asm"
-		include	"Objects/52 Moving Blocks/52 Moving Blocks.asm"
+		include	"Objects/Zone/Shared/Moving Block.asm"
 		include	"Objects/Badniks/Basaran.asm"
 		include	"Objects/Zone/Shared/Floating Blocks and Doors.asm"
 		include	"Objects/Zone/Shared/Spiked Ball and Chain.asm"
@@ -1982,7 +1982,7 @@ Map_LWall:	include	"Objects/Zone/MZ/Mappings/Wall of Lava.map"
 		include	"Objects/Zone/LZ/Water Surface.asm"
 		include	"Objects/Zone/LZ/Breakable Pole.asm"
 		include	"Objects/Zone/LZ/Flapping Door.asm"
-		include	"Objects/71 Invisible Solid Barriers/71 Invisible Solid Barriers.asm"
+		include	"Objects/Global/Invisible Barrier.asm"
 		include	"Objects/Zone/SLZ/Fan.asm"
 		include	"Objects/Zone/SLZ/Seesaw.asm"
 		include	"Objects/Badniks/Walking Bomb.asm"
@@ -1997,17 +1997,17 @@ Map_LWall:	include	"Objects/Zone/MZ/Mappings/Wall of Lava.map"
 
 ; ===========================================================================
 ; >>> Main Sonic player object
-		include	"Objects/01 Sonic/01 Sonic.asm"
+		include	"Objects/Global/Sonic.asm"
 
 
 ; ===========================================================================
 ; >>> Various unique objects
 		include	"Objects/Zone/LZ/Drowning Countdown.asm" ; includes ResumeMusic
-		include	"Objects/38 Shield and Invincibility/38 Shield and Invincibility.asm"
+		include	"Objects/Effects/Shield and Invincibility.asm"
 		include	"Objects/Unused/Special Stage Entry.asm"
 		include	"Objects/Zone/LZ/Water Splash.asm"
-		include	"Objects/38 Shield and Invincibility/anim/Shield and Invincibility.asm"
-Map_Shield:	include	"Objects/38 Shield and Invincibility/maps/Shield and Invincibility.asm"
+		include	"Objects/Effects/Animations/Shield and Invincibility.ani"
+Map_Shield:	include	"Objects/Effects/Mappings/Shield and Invincibility.map"
 		include	"Objects/Unused/Animations/Special Stage Entry.ani"
 Map_Vanish:	include	"Objects/Unused/Mappings/Special Stage Entry.map"
 		include	"Objects/Zone/LZ/Animations/Water Splash.ani"
@@ -2016,10 +2016,10 @@ Map_Splash:	include	"Objects/Zone/LZ/Mappings/Water Splash.map"
 
 ; ===========================================================================
 ; >>> Collision subroutines for Sonic and other objects
-		include	"Objects/01 Sonic/Sonic AnglePos.asm"
+		include	"Objects/Global/Sonic (Ground Collision).asm"
 		include	"Objects/shared/sub FindNearestTile & FindFloor & FindWall.asm"
 		include "Libraries/ConvertCollisionArray (Unused).asm"
-		include	"Objects/01 Sonic/Sonic Collision.asm"
+		include	"Objects/Global/Sonic (Collision Detection).asm"
 
 
 ; ===========================================================================
@@ -2039,9 +2039,9 @@ Map_Splash:	include	"Objects/Zone/LZ/Mappings/Water Splash.map"
 ; ===========================================================================
 ; >>> Misc objects
 		include	"Objects/Badniks/Caterkiller.asm"
-		include	"Objects/79 Lamppost/79 Lamppost.asm"
-		include	"Objects/7D Hidden Bonuses/7D Hidden Bonuses.asm"
-		include	"Objects/Cards/Credits.asm"
+		include	"Objects/Global/Lamppost.asm"
+		include	"Objects/Effects/Hidden Points.asm"
+		include	"Objects/Cards/Credit Text.asm"
 
 
 ; ===========================================================================
@@ -2056,12 +2056,12 @@ Map_BossItems:	include	"Objects/Bosses/Mappings/Boss Items.map"
 		include	"Objects/Bosses/Egg Stinger.asm"
 		include	"Objects/Zone/SBZ/Eggman Cutscene and Crumbling Floor.asm"
 		include	"Objects/Bosses/Egg Crusher.asm"
-		include	"Objects/3E Prison Capsule/3E Prison Capsule.asm"
+		include	"Objects/Global/Prison Capsule.asm"
 
 
 ; ===========================================================================
 ; >>> Object-to-object touch response handler for Sonic
-		include	"Objects/01 Sonic/Sonic ReactToItem.asm"
+		include	"Objects/Global/Sonic (Object Reactions).asm"
 
 
 ; ===========================================================================
@@ -2074,7 +2074,7 @@ Map_SS_Glass:	include	"Game Modes/Special Stage/maps/SS Glass Block.asm"
 Map_SS_Up:	include	"Game Modes/Special Stage/maps/SS UP Block.asm"
 Map_SS_Down:	include	"Game Modes/Special Stage/maps/SS DOWN Block.asm"
 Map_SS_Chaos:	include	"Game Modes/Special Stage/maps/SS Chaos Emeralds.asm"
-		include	"Objects/09 Sonic in Special Stage/09 Sonic in Special Stage.asm"
+		include	"Objects/Global/Sonic (Special Stage).asm"
 
 
 ; ===========================================================================
@@ -2162,36 +2162,36 @@ Nem_JapNames:	binclude	"Game Modes/Title Screen/art/Hidden Japanese Credits.nem"
 ; ---------------------------------------------------------------------------
 ; Uncompressed graphics - Sonic
 ; ---------------------------------------------------------------------------
-Map_Sonic:	include	"Objects/01 Sonic/maps/Sonic.asm"
+Map_Sonic:	include	"Objects/Global/Mappings/Sonic.map"
 
-SonicDynPLC:	include	"Objects/01 Sonic/maps/Sonic - Dynamic Gfx Script.asm"
+SonicDynPLC:	include	"Objects/Global/DPLCs/Sonic.dplc"
 
-Art_Sonic:	binclude	"Objects/01 Sonic/art/Sonic.unc"
+Art_Sonic:	binclude	"Objects/Global/Cells/Sonic.unc"
 		even
 
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - various
 ; ---------------------------------------------------------------------------
 	if Revision=0
-Nem_Smoke:	binclude	"Objects/shared/art/Unused - Smoke.nem"
+Nem_Smoke:	binclude	"Objects/Unused/Cells/Smoke.nem"
 		even
 Nem_SyzSparkle:	binclude	"Zones/Spring Yard Zone/art/Unused - SYZ Sparkles.nem"
 		even
 	endif
 
-Nem_Shield:	binclude	"Objects/38 Shield and Invincibility/art/Shield.nem"
+Nem_Shield:	binclude	"Objects/Effects/Cells/Shield.nem"
 		even
-Nem_Stars:	binclude	"Objects/38 Shield and Invincibility/art/Invincibility Stars.nem"
+Nem_Stars:	binclude	"Objects/Effects/Cells/Invincibility Stars.nem"
 		even
 
 	if Revision=0
 Nem_LzSonic:	binclude	"Zones/Labyrinth Zone/art/Unused - LZ Sonic.nem" ; Sonic holding his breath
 		even
-Nem_UnkFire:	binclude	"Objects/shared/art/Unused - Fireball.nem" ; unused fireball
+Nem_UnkFire:	binclude	"Objects/Unused/Cells/Fireball.nem" ; unused fireball
 		even
 Nem_Warp:	binclude	"Game Modes/Special Stage/art/Unused - SStage Flash.nem" ; entry to special stage flash
 		even
-Nem_Goggle:	binclude	"Objects/shared/art/Unused - Goggles.nem" ; unused goggles
+Nem_Goggle:	binclude	"Objects/Unused/Cells/Goggles.nem" ; unused goggles
 		even
 	endif
 
@@ -2250,7 +2250,7 @@ Nem_ResultEm:	binclude	"Game Modes/Special Stage/art/Special Result Emeralds.nem
 ; ---------------------------------------------------------------------------
 Nem_Stalk:	binclude	"Zones/Green Hill Zone/art/GHZ Flower Stalk.nem"
 		even
-Nem_Swing:	binclude	"Objects/15 Swinging Platforms/art/GHZ Swinging Platform.nem"
+Nem_Swing:	binclude	"Objects/Zone/GHZ/Cells/Swinging Platform.nem"
 		even
 Nem_Bridge:	binclude	"Objects/Zone/GHZ/Cells/Bridge.nem"
 		even
@@ -2258,7 +2258,7 @@ Nem_GhzUnkBlock:binclude	"Zones/Green Hill Zone/art/Unused - GHZ Block.nem"
 		even
 Nem_Ball:	binclude	"Objects/Unused/Cells/GHZ Ball.nem"
 		even
-Nem_Spikes:	binclude	"Objects/36 Spikes/art/Spikes.nem"
+Nem_Spikes:	binclude	"Objects/Global/Cells/Spike.nem"
 		even
 Nem_GhzLog:	binclude	"Zones/Green Hill Zone/art/Unused - GHZ Log.nem"
 		even
@@ -2312,7 +2312,7 @@ Nem_LzBlock1:	binclude	"Objects/Zone/LZ/Cells/32x32 Block.nem"
 ; ---------------------------------------------------------------------------
 Nem_MzMetal:	binclude	"Zones/Marble Zone/art/MZ Metal Blocks.nem"
 		even
-Nem_MzSwitch:	binclude	"Objects/32 Button/art/MZ Switch.nem"
+Nem_MzSwitch:	binclude	"Objects/Zone/MZ/Cells/Switch.nem"
 		even
 Nem_MzGlass:	binclude	"Objects/Zone/MZ/Cells/Green Glass Block.nem"
 		even
@@ -2340,7 +2340,7 @@ Nem_SlzWall:	binclude	"Objects/Zone/SLZ/Cells/Breakable Wall.nem"
 		even
 Nem_Pylon:	binclude	"Objects/Zone/SLZ/Cells/Pylon.nem"
 		even
-Nem_SlzSwing:	binclude	"Objects/15 Swinging Platforms/art/SLZ Swinging Platform.nem"
+Nem_SlzSwing:	binclude	"Objects/Zone/SLZ/Cells/Swinging Platform.nem"
 		even
 Nem_SlzBlock:	binclude	"Zones/Star Light Zone/art/SLZ 32x32 Block.nem"
 		even
@@ -2354,7 +2354,7 @@ Nem_Bumper:	binclude	"Objects/Zone/SYZ/Cells/Bumper.nem"
 		even
 Nem_SyzSpike2:	binclude	"Objects/Zone/SYZ/Cells/Small Spikeball.nem"
 		even
-Nem_LzSwitch:	binclude	"Objects/32 Button/art/Switch.nem"
+Nem_LzSwitch:	binclude	"Objects/Zone/Shared/Cells/Switch.nem"
 		even
 Nem_SyzSpike1:	binclude	"Objects/Zone/SYZ/Cells/Large Spikeball.nem"
 		even
@@ -2374,7 +2374,7 @@ Nem_SpinPform:	binclude	"Objects/Zone/SBZ/Cells/Spinning Platform.nem"
 		even
 Nem_TrapDoor:	binclude	"Objects/Zone/SBZ/Cells/Trapdoor.nem"
 		even
-Nem_SbzFloor:	binclude	"Objects/1A, 53 Collapsing Ledges and Floors/art/SBZ Collapsing Floor.nem"
+Nem_SbzFloor:	binclude	"Objects/Zone/SBZ/Cells/Collapsing Floor.nem"
 		even
 Nem_Electric:	binclude	"Objects/Zone/SBZ/Cells/Electrocuter.nem"
 		even
@@ -2400,7 +2400,7 @@ Nem_Crabmeat:	binclude	"Objects/Badniks/Cells/Crabmeat.nem"
 		even
 Nem_Buzz:	binclude	"Objects/Badniks/Cells/Buzz Bomber.nem"
 		even
-Nem_UnkExplode:	binclude	"Objects/27, 3F Explosions/art/Unused - Explosion.nem"
+Nem_UnkExplode:	binclude	"Objects/Unused/Cells/Explosion.nem"
 		even
 Nem_Burrobot:	binclude	"Objects/Badniks/Cells/Burrobot.nem"
 		even
@@ -2436,27 +2436,27 @@ Nem_Hud:	binclude	"Objects/Cards/Cells/HUD Text.nem" ; HUD (rings, time, score)
 		even
 Nem_Lives:	binclude	"Objects/Cards/Cells/Life Icon.nem"
 		even
-Nem_Ring:	binclude	"Objects/25, 37 Rings/art/Rings.nem"
+Nem_Ring:	binclude	"Objects/Global/Cells/Ring.nem"
 		even
-Nem_Monitors:	binclude	"Objects/26, 2E Monitors and Power-Ups/art/Monitors.nem"
+Nem_Monitors:	binclude	"Objects/Global/Cells/Monitor.nem"
 		even
-Nem_Explode:	binclude	"Objects/27, 3F Explosions/art/Explosion.nem"
+Nem_Explode:	binclude	"Objects/Effects/Cells/Explosion.nem"
 		even
-Nem_Points:	binclude	"Objects/28, 29 Animals and Points/art/Points.nem" ; points from destroyed enemy or object
+Nem_Points:	binclude	"Objects/Effects/Cells/Points.nem" ; points from destroyed enemy or object
 		even
 Nem_GameOver:	binclude	"Objects/Cards/Cells/Game Over.nem" ; game over / time over
 		even
-Nem_HSpring:	binclude	"Objects/41 Springs/art/Spring Horizontal.nem"
+Nem_HSpring:	binclude	"Objects/Global/Cells/Spring Horizontal.nem"
 		even
-Nem_VSpring:	binclude	"Objects/41 Springs/art/Spring Vertical.nem"
+Nem_VSpring:	binclude	"Objects/Global/Cells/Spring Vertical.nem"
 		even
-Nem_SignPost:	binclude	"Objects/0D Signpost/art/Signpost.nem" ; end of level signpost
+Nem_SignPost:	binclude	"Objects/Global/Cells/Signpost.nem" ; end of level signpost
 		even
-Nem_Lamp:	binclude	"Objects/79 Lamppost/art/Lamppost.nem"
+Nem_Lamp:	binclude	"Objects/Global/Cells/Lamppost.nem"
 		even
-Nem_BigFlash:	binclude	"Objects/4B, 7C Giant Ring and Flash/art/Giant Ring Flash.nem"
+Nem_BigFlash:	binclude	"Objects/Global/Cells/Giant Ring Flash.nem"
 		even
-Nem_Bonus:	binclude	"Objects/7D Hidden Bonuses/art/Hidden Bonuses.nem" ; hidden bonuses at end of a level
+Nem_Bonus:	binclude	"Objects/Effects/Cells/Hidden Points.nem" ; hidden bonuses at end of a level
 		even
 
 ; ---------------------------------------------------------------------------
@@ -2470,19 +2470,19 @@ Nem_MiniSonic:	binclude	"Game Modes/Continue Screen/art/Continue Screen Stuff.ne
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - animals
 ; ---------------------------------------------------------------------------
-Nem_Rabbit:	binclude	"Objects/28, 29 Animals and Points/art/Animal Rabbit.nem"
+Nem_Rabbit:	binclude	"Objects/Effects/Cells/Animal Rabbit.nem"
 		even
-Nem_Chicken:	binclude	"Objects/28, 29 Animals and Points/art/Animal Chicken.nem"
+Nem_Chicken:	binclude	"Objects/Effects/Cells/Animal Chicken.nem"
 		even
-Nem_Penguin:	binclude	"Objects/28, 29 Animals and Points/art/Animal Penguin.nem"
+Nem_Penguin:	binclude	"Objects/Effects/Cells/Animal Penguin.nem"
 		even
-Nem_Seal:	binclude	"Objects/28, 29 Animals and Points/art/Animal Seal.nem"
+Nem_Seal:	binclude	"Objects/Effects/Cells/Animal Seal.nem"
 		even
-Nem_Pig:	binclude	"Objects/28, 29 Animals and Points/art/Animal Pig.nem"
+Nem_Pig:	binclude	"Objects/Effects/Cells/Animal Pig.nem"
 		even
-Nem_Flicky:	binclude	"Objects/28, 29 Animals and Points/art/Animal Flicky.nem"
+Nem_Flicky:	binclude	"Objects/Effects/Cells/Animal Flicky.nem"
 		even
-Nem_Squirrel:	binclude	"Objects/28, 29 Animals and Points/art/Animal Squirrel.nem"
+Nem_Squirrel:	binclude	"Objects/Effects/Cells/Animal Squirrel.nem"
 		even
 
 ; ---------------------------------------------------------------------------
@@ -2551,7 +2551,7 @@ Nem_Eggman:	binclude	"Objects/Bosses/Cells/Main.nem"
 		even
 Nem_Weapons:	binclude	"Objects/Bosses/Cells/Weapons.nem"
 		even
-Nem_Prison:	binclude	"Objects/3E Prison Capsule/art/Prison Capsule.nem"
+Nem_Prison:	binclude	"Objects/Global/Cells/Prison Capsule.nem"
 		even
 Nem_Sbz2Eggman:	binclude	"Objects/Bosses/Cells/Eggman (SBZ2 & FZ).nem"
 		even
@@ -2790,7 +2790,7 @@ Level_EndUnk:	dc.l 0
 ; ---------------------------------------------------------------------------
 ; Uncompressed graphics - Giant Rings
 ; ---------------------------------------------------------------------------
-Art_BigRing:	binclude	"Objects/4B, 7C Giant Ring and Flash/art/Giant Ring.unc"
+Art_BigRing:	binclude	"Objects/Global/Cells/Giant Ring.unc"
 Art_BigRing_size:	equ	*-Art_BigRing
 		even
 

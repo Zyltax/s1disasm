@@ -48,7 +48,7 @@ palid_Ending:		makePalEntry	Pal_Ending, 		v_palette_line_1
 Pal_SegaBG:		bincludeEndMarker	"Game Modes/Sega Screen/palettes/Sega Background.bin"
 Pal_Title:		bincludeEndMarker	"Game Modes/Title Screen/palettes/Title Screen.bin"
 Pal_LevelSel:		bincludeEndMarker	"Game Modes/Title Screen/palettes/Level Select.bin"
-Pal_Sonic:		bincludeEndMarker	"Objects/01 Sonic/palettes/Sonic.bin"
+Pal_Sonic:		bincludeEndMarker	"Objects/Global/Palettes/Sonic.bin"
 Pal_GHZ:		bincludeEndMarker	"Zones/Green Hill Zone/palettes/Green Hill Zone.bin"
 Pal_LZ:			bincludeEndMarker	"Zones/Labyrinth Zone/palettes/Labyrinth Zone.bin"
 Pal_LZWater:		bincludeEndMarker	"Zones/Labyrinth Zone/palettes/Labyrinth Zone Underwater.bin"

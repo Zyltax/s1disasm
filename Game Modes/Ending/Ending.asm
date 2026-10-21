@@ -255,6 +255,6 @@ End_MoveSonExit:
 ; ===========================================================================
 
 ; >>> Objects on the ending sequence
-	include	"Objects/87, 88, 89 Ending Sequence Sonic, Emeralds, Logo/87, 88, 89 Ending Sequence Sonic, Emeralds, Logo.asm"
+	include	"Objects/Cards/Ending Sequence (Sonic, Emeralds, Logo).asm"
 
 
