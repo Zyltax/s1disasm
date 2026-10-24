@@ -86,41 +86,24 @@ and code labels use too, things like `Level_SBZ3`, `ObjPos_FZ`, `sbz3.bin`, `fz.
 `_Constants.asm` defines both IDs with their internal values, and `Libraries/LevelLayoutLoad.asm`
 is where the two get special-cased.
 
-`Zones/shared/` holds the cross-zone stuff, the collision arrays and angle map every zone uses,
-plus the unused demo.
+`Zones/Collision/` holds the cross-zone stuff, the collision arrays and angle map every zone uses.
 
 ---
 
 ## Game Modes
 
 One assmebly file per game mode, `Zone`, `SEGA`, `Title Screen`, `Special Stage`,
-`Continue Screen` and `Ending`, each with its own code, art, palettes and layouts, instead of
-being scattered across the old `tilemaps`, `sslayout` and `artunc` folders like before:
+`Continue Screen` and `Ending`.
 
 ```
-Game Modes/Special Stage/
-    Special Stage.asm           game mode code
-    Special Stage Rendering.asm layout drawing, mappings and VRAM pointers
-    art/            stage art
-    demos/          the intro demo that plays in the special stage
-    layouts/        stage layouts (was sslayout/)
-    maps/           block mappings
-    palettes/       palettes and palette cycles
-    startpos/       per-stage starting positions
-    tilemaps/       background tilemaps
-```
-
-Each mode's code sits at the root of its own folder, same as an object's code does:
-
-```
-Game Modes/Level/Level.asm                     normal levels and demo mode
-Game Modes/Sega Screen/Sega Screen.asm
-Game Modes/Title Screen/Title Screen.asm        also holds the level select
-Game Modes/Special Stage/Special Stage.asm
-Game Modes/Continue Screen/Continue Screen.asm
-Game Modes/Ending/Ending.asm
-Game Modes/Ending/Credits.asm
-Game Modes/Ending/Try Again and End.asm
+Modes/
+    Title Screen.asm    game mode code
+    End Cutscene.asm    game mode code
+    Cells/              art 
+    Mappings/           block mappings
+    Palettes/           palettes
+    Palettes/Cycle/      palette cycles
+    Maps/               foreground/background tilemaps
 ```
 
 `sonic.asm` keeps the game mode table plus the startup, interrupt and main loop code, and pulls
@@ -134,28 +117,21 @@ what puts the code at the addresses the game actually jumps to.
 - `Libraries/`, engine code that doesn't belong to any single zone or object: level drawing,
   layer deformation, pattern load cues, palette fading, the object pointer table, HUD updating.
 - `Sound/`, the sound driver, its RAM definitions, the music and the sound effects.
-- `sonic.asm`, `_Constants.asm`, `_Variables.asm`, `Macros.asm`, `MacroSetup.asm`, the main
-  source and its supporting definitions. Every `include` and `binclude` statement still lives in
-  `sonic.asm`, in ROM order, only the paths changed.
-- `_Fixed Binary Files/`, optional replacement files for bugs the `FixBugs` flag can't patch. It
+- `sonic.asm`, the main source of the game. Every `include` and `binclude` 
+  statement still lives in this file, in ROM order, only the paths changed.
+- `_Fixed Binaries/`, optional replacement files for bugs the `FixBugs` flag can't patch. It
   mirrors the layout above, so each replacement sits at the path it'd occupy in the project
   proper.
 
-HUD ends up split on purpose here. `Objects/21 HUD/` holds object 21 with its mappings and art,
-while `Libraries/HUD Update.asm` stays with the engine, since the object and the routine that
-updates the display are genuinely two different things even if they're related.
+HUD ends up split on purpose here. `Cards/HUD/` holds object 21 with its mappings and art,
+while `Libraries/HUD Update.asm` stays with the engine, the object does nothing other than
+render the formatted data, meanwhile the update routine handles the BCD for numerics and
+various bonuses, such as gaining a life after collecting X rings.
 
 ---
 
 ## Conventions
 
-Art goes straight in `art/`. The file extension already tells you the compression, `.nem` is
+Art goes straight in `Cells/`. The file extension already tells you the compression, `.nem` is
 Nemesis, `.unc` is uncompressed, `.kos` is Kosinski, so there's no need for a separate folder per
 format on top of that. Mappings follow the same idea, `.eni` for Enigma.
-
-Object folders are `<ID> <name>`, with every ID the file implements, matching the source
-filename inside.
-
-Zone and game mode folders get written out in full, `Green Hill Zone`, `Title Screen`, never
-abbreviated. The abbreviations only survive inside filenames, where they came from the original
-data anyway (`blocks/GHZ.eni`, `objpos/ghz1.bin`).
