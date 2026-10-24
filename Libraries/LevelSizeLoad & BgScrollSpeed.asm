@@ -58,14 +58,14 @@ LevelSizeArray:
 ; (Previously separated into "Libraries/Start Location Array - Ending.asm")
 ; ---------------------------------------------------------------------------
 EndingStLocArray:
-		binclude	"Zones/Green Hill Zone/startpos/Credits Demos/ghz1 (Credits demo 1).bin"
-		binclude	"Zones/Marble Zone/startpos/Credits Demos/mz2 (Credits demo).bin"
-		binclude	"Zones/Spring Yard Zone/startpos/Credits Demos/syz3 (Credits demo).bin"
-		binclude	"Zones/Labyrinth Zone/startpos/Credits Demos/lz3 (Credits demo).bin"
-		binclude	"Zones/Star Light Zone/startpos/Credits Demos/slz3 (Credits demo).bin"
-		binclude	"Zones/Scrap Brain Zone/startpos/Credits Demos/sbz1 (Credits demo).bin"
-		binclude	"Zones/Scrap Brain Zone/startpos/Credits Demos/sbz2 (Credits demo).bin"
-		binclude	"Zones/Green Hill Zone/startpos/Credits Demos/ghz1 (Credits demo 2).bin"
+		binclude	"Levels/GHZ/Act 1/Demo Start Position.bin"
+		binclude	"Levels/MZ/Act 2/Demo Start Position.bin"
+		binclude	"Levels/SYZ/Act 3/Demo Start Position.bin"
+		binclude	"Levels/LZ/Act 3/Demo Start Position.bin"
+		binclude	"Levels/SLZ/Act 3/Demo Start Position.bin"
+		binclude	"Levels/SBZ/Act 1/Demo Start Position.bin"
+		binclude	"Levels/SBZ/Act 2/Demo Start Position.bin"
+		binclude	"Levels/GHZ/Act 2/Demo Start Position.bin"
 
 
 ; ===========================================================================
@@ -175,40 +175,40 @@ unused_startloc: macro
 		endm
 ; ---------------------------------------------------------------------------
 
-StartLocArray:	binclude	"Zones/Green Hill Zone/startpos/ghz1.bin"
-		binclude	"Zones/Green Hill Zone/startpos/ghz2.bin"
-		binclude	"Zones/Green Hill Zone/startpos/ghz3.bin"
+StartLocArray:	binclude	"Levels/GHZ/Act 1/Start Position.bin"
+		binclude	"Levels/GHZ/Act 2/Start Position.bin"
+		binclude	"Levels/GHZ/Act 3/Start Position.bin"
 		unused_startloc
 
-		binclude	"Zones/Labyrinth Zone/startpos/lz1.bin"
-		binclude	"Zones/Labyrinth Zone/startpos/lz2.bin"
-		binclude	"Zones/Labyrinth Zone/startpos/lz3.bin"
-		binclude	"Zones/Scrap Brain Zone/startpos/sbz3.bin"	; SBZ3 is LZ4 internally
+		binclude	"Levels/LZ/Act 1/Start Position.bin"
+		binclude	"Levels/LZ/Act 2/Start Position.bin"
+		binclude	"Levels/LZ/Act 3/Start Position.bin"
+		binclude	"Levels/SBZ/Act 3/Start Position.bin"	; SBZ3 is LZ4 internally
 
-		binclude	"Zones/Marble Zone/startpos/mz1.bin"
-		binclude	"Zones/Marble Zone/startpos/mz2.bin"
-		binclude	"Zones/Marble Zone/startpos/mz3.bin"
+		binclude	"Levels/MZ/Act 1/Start Position.bin"
+		binclude	"Levels/MZ/Act 2/Start Position.bin"
+		binclude	"Levels/MZ/Act 3/Start Position.bin"
 		unused_startloc
 
-		binclude	"Zones/Star Light Zone/startpos/slz1.bin"
-		binclude	"Zones/Star Light Zone/startpos/slz2.bin"
-		binclude	"Zones/Star Light Zone/startpos/slz3.bin"
+		binclude	"Levels/SLZ/Act 1/Start Position.bin"
+		binclude	"Levels/SLZ/Act 2/Start Position.bin"
+		binclude	"Levels/SLZ/Act 3/Start Position.bin"
 		unused_startloc
 
-		binclude	"Zones/Spring Yard Zone/startpos/syz1.bin"
-		binclude	"Zones/Spring Yard Zone/startpos/syz2.bin"
-		binclude	"Zones/Spring Yard Zone/startpos/syz3.bin"
+		binclude	"Levels/SYZ/Act 1/Start Position.bin"
+		binclude	"Levels/SYZ/Act 2/Start Position.bin"
+		binclude	"Levels/SYZ/Act 3/Start Position.bin"
 		unused_startloc
 
-		binclude	"Zones/Scrap Brain Zone/startpos/sbz1.bin"
-		binclude	"Zones/Scrap Brain Zone/startpos/sbz2.bin"
-		binclude	"Zones/Scrap Brain Zone/startpos/fz.bin"	; FZ is SBZ3 internally
+		binclude	"Levels/SBZ/Act 1/Start Position.bin"
+		binclude	"Levels/SBZ/Act 2/Start Position.bin"
+		binclude	"Levels/SBZ/Final/Start Position.bin"	; FZ is SBZ3 internally
 		unused_startloc
 
 		zonewarning StartLocArray,$10
 
-		binclude	"Game Modes/Ending/startpos/end1.bin"
-		binclude	"Game Modes/Ending/startpos/end2.bin"
+		binclude	"Levels/GHZ/Ending/Start Position 1.bin"
+		binclude	"Levels/GHZ/Ending/Start Position 2.bin"
 		unused_startloc
 		unused_startloc
 

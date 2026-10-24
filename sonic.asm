@@ -49,25 +49,25 @@ ZoneCount = 6
 ; ===========================================================================
 ; AS-specific macros and assembler settings
 	cpu 68000
-	include "MacroSetup.asm"
+	include "Define/Macros (Assembler Specifc).asm" 
 
 ; ===========================================================================
 ; Simplifying macros and functions
-	include	"Macros.asm"
+	include	"Define/Macros (General).asm"
 
 ; ===========================================================================
 ; Equates section - Names for constants
-	include	"_Constants.asm"
+	include	"Define/Constants.asm"
 
 ; ===========================================================================
 ; Equates section - Names for variables
-	include	"_Variables.asm"
+	include	"Define/Variables.asm"
 
 ; ===========================================================================
 ; Expressing sprite mappings and DPLCs in a portable and human-readable form
 SonicMappingsVer = 1
 SonicDplcVer = 1
-	include	"Objects/shared/_MapMacros.asm"
+	include	"Define/Macros (Sprites).asm"
 
 ; ===========================================================================
 ; start of ROM
@@ -628,7 +628,7 @@ ErrorWaitForC:
 ; (formerly "menutext.bin")
 ; ---------------------------------------------------------------------------
 
-Art_Text:	bincludeEndMarker	"Game Modes/Title Screen/art/Level Select & Debug Text.unc"
+Art_Text:	bincludeEndMarker	"Modes/Cells/Level Select & Debug Text.unc"
 
 
 ; ===========================================================================
@@ -1679,8 +1679,8 @@ PCycSega_FadeIn:
 
 ; ===========================================================================
 ; >>> Palette cycle data used for Sega screen
-Pal_Sega1:	bincludeEndMarker	"Game Modes/Sega Screen/palettes/Sega1.bin"	; used during the light scanning effect
-Pal_Sega2:	bincludeEndMarker	"Game Modes/Sega Screen/palettes/Sega2.bin"	; used during the fade-in (three color sets, 5+1 colors each)
+Pal_Sega1:	bincludeEndMarker	"Modes/Palettes/SEGA 1.bin"	; used during the light scanning effect
+Pal_Sega2:	bincludeEndMarker	"Modes/Palettes/SEGA 2.bin"	; used during the fade-in (three color sets, 5+1 colors each)
 
 
 ; ===========================================================================
@@ -1800,21 +1800,21 @@ WaitForVBlank:
 
 
 ; ===========================================================================
-	include	"Game Modes/Sega Screen/Sega Screen.asm"
+	include	"Modes/SEGA.asm"
 ; ===========================================================================
-	include	"Game Modes/Title Screen/Title Screen.asm"
+	include	"Modes/Title Screen.asm"
 ; ===========================================================================
-	include	"Game Modes/Level/Level.asm"
+	include	"Modes/Zone.asm"
 ; ===========================================================================
-	include	"Game Modes/Special Stage/Special Stage.asm"
+	include	"Modes/Special Stage.asm"
 ; ===========================================================================
-	include	"Game Modes/Continue Screen/Continue Screen.asm"
+	include	"Modes/Continue Screen.asm"
 ; ===========================================================================
-	include	"Game Modes/Ending/Ending.asm"
+	include	"Modes/End Cutscene.asm"
 ; ===========================================================================
-	include	"Game Modes/Ending/Credits.asm"
+	include	"Modes/Credits.asm"
 ; ===========================================================================
-	include	"Game Modes/Ending/Try Again and End.asm"
+	include	"Modes/End Screen.asm"
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; >> END OF MAIN GAME LOGIC - Everything below this point is file includes <<
@@ -2068,12 +2068,12 @@ Map_BossItems:	include	"Objects/Bosses/Mappings/Boss Items.map"
 ; >>> Special Stage rendering and objects
 		; The following includes "SS_ShowLayout", "SS_AniWallsRings",
 		; "SS_FindFreeAnimationSlot", "SS_AniItems", and "SS_Load"
-		include	"Game Modes/Special Stage/Special Stage Rendering.asm"
-Map_SS_Shared:	include	"Game Modes/Special Stage/maps/SS Shared Block.asm"
-Map_SS_Glass:	include	"Game Modes/Special Stage/maps/SS Glass Block.asm"
-Map_SS_Up:	include	"Game Modes/Special Stage/maps/SS UP Block.asm"
-Map_SS_Down:	include	"Game Modes/Special Stage/maps/SS DOWN Block.asm"
-Map_SS_Chaos:	include	"Game Modes/Special Stage/maps/SS Chaos Emeralds.asm"
+		include	"Modes/Special Stage (Renderer).asm"
+Map_SS_Shared:	include	"Levels/Special/Mappings/Shared.asm"
+Map_SS_Glass:	include	"Levels/Special/Mappings/Glass.asm"
+Map_SS_Up:	include	"Levels/Special/Mappings/UP.asm"
+Map_SS_Down:	include	"Levels/Special/Mappings/DOWN.asm"
+Map_SS_Chaos:	include	"Levels/Special/Mappings/Chaos Emeralds.asm"
 		include	"Objects/Global/Sonic (Special Stage).asm"
 
 
@@ -2132,31 +2132,31 @@ Art_LivesNums:	binclude "Objects/Cards/Cells/Life Numerals.unc" ; 8x8 pixel numb
 ; Compressed graphics and mappings - Sega screen
 ; ---------------------------------------------------------------------------
 	if Revision=0
-Nem_SegaLogo:	binclude	"Game Modes/Sega Screen/art/Sega Logo (REV00).nem" ; large Sega logo
+Nem_SegaLogo:	binclude	"Modes/Cells/SEGA (REV00).nem" ; large Sega logo
 		even
-Eni_SegaLogo:	binclude	"Game Modes/Sega Screen/tilemaps/Sega Logo (REV00).eni" ; large Sega logo (mappings)
+Eni_SegaLogo:	binclude	"Modes/Maps/SEGA (REV00).eni" ; large Sega logo (mappings)
 		even
 	else
-Nem_SegaLogo:	binclude	"Game Modes/Sega Screen/art/Sega Logo (REV01).nem" ; large Sega logo
+Nem_SegaLogo:	binclude	"Modes/Cells/SEGA (REV01).nem" ; large Sega logo
 		even
-Eni_SegaLogo:	binclude	"Game Modes/Sega Screen/tilemaps/Sega Logo (REV01).eni" ; large Sega logo (mappings)
+Eni_SegaLogo:	binclude	"Modes/Maps/SEGA (REV01).eni" ; large Sega logo (mappings)
 		even
 	endif
 
 ; ---------------------------------------------------------------------------
 ; Compressed graphics and mappings - Title screen
 ; ---------------------------------------------------------------------------
-Eni_Title:	binclude	"Game Modes/Title Screen/tilemaps/Title Screen.eni" ; title screen foreground (mappings)
+Eni_Title:	binclude	"Modes/Maps/Title Screen.eni" ; title screen foreground (mappings)
 		even
-Nem_TitleFg:	binclude	"Game Modes/Title Screen/art/Title Screen Foreground.nem"
+Nem_TitleFg:	binclude	"Modes/Cells/Title Foreground.nem"
 		even
-Nem_TitleSonic:	binclude	"Game Modes/Title Screen/art/Title Screen Sonic.nem"
+Nem_TitleSonic:	binclude	"Modes/Cells/Sonic (Title Screen).nem"
 		even
-Nem_TitleTM:	binclude	"Game Modes/Title Screen/art/Title Screen TM.nem"
+Nem_TitleTM:	binclude	"Modes/Cells/TM.nem"
 		even
-Eni_JapNames:	binclude	"Game Modes/Title Screen/tilemaps/Hidden Japanese Credits.eni" ; Japanese credits (mappings)
+Eni_JapNames:	binclude	"Modes/Maps/Hidden Japanese Credits.eni" ; Japanese credits (mappings)
 		even
-Nem_JapNames:	binclude	"Game Modes/Title Screen/art/Hidden Japanese Credits.nem"
+Nem_JapNames:	binclude	"Modes/Cells/Hidden Japanese Credits.nem"
 		even
 
 ; ---------------------------------------------------------------------------
@@ -2175,7 +2175,7 @@ Art_Sonic:	binclude	"Objects/Global/Cells/Sonic.unc"
 	if Revision=0
 Nem_Smoke:	binclude	"Objects/Unused/Cells/Smoke.nem"
 		even
-Nem_SyzSparkle:	binclude	"Zones/Spring Yard Zone/art/Unused - SYZ Sparkles.nem"
+Nem_SyzSparkle:	binclude	"Levels/SYZ/Cells/Unused/Sparkles.nem"
 		even
 	endif
 
@@ -2185,11 +2185,11 @@ Nem_Stars:	binclude	"Objects/Effects/Cells/Invincibility Stars.nem"
 		even
 
 	if Revision=0
-Nem_LzSonic:	binclude	"Zones/Labyrinth Zone/art/Unused - LZ Sonic.nem" ; Sonic holding his breath
+Nem_LzSonic:	binclude	"Levels/LZ/Cells/Unused/Sonic.nem" ; Sonic holding his breath
 		even
 Nem_UnkFire:	binclude	"Objects/Unused/Cells/Fireball.nem" ; unused fireball
 		even
-Nem_Warp:	binclude	"Game Modes/Special Stage/art/Unused - SStage Flash.nem" ; entry to special stage flash
+Nem_Warp:	binclude	"Levels/Special/Cells/Unused/Flash.nem" ; entry to special stage flash
 		even
 Nem_Goggle:	binclude	"Objects/Unused/Cells/Goggles.nem" ; unused goggles
 		even
@@ -2198,69 +2198,69 @@ Nem_Goggle:	binclude	"Objects/Unused/Cells/Goggles.nem" ; unused goggles
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - special stage
 ; ---------------------------------------------------------------------------
-Map_SSWalls:	include	"Game Modes/Special Stage/maps/SS Walls.asm"
+Map_SSWalls:	include	"Levels/Special/Mappings/Walls.asm"
 
-Nem_SSWalls:	binclude	"Game Modes/Special Stage/art/Special Walls.nem" ; special stage walls
+Nem_SSWalls:	binclude	"Levels/Special/Cells/Walls.nem" ; special stage walls
 		even
-Eni_SSBg1:	binclude	"Game Modes/Special Stage/tilemaps/SS Background 1.eni" ; special stage background (mappings)
+Eni_SSBg1:	binclude	"Levels/Special/Maps/Birds and Fish.eni" ; special stage background (mappings)
 		even
-Nem_SSBgFish:	binclude	"Game Modes/Special Stage/art/Special Birds & Fish.nem" ; special stage birds and fish background
+Nem_SSBgFish:	binclude	"Levels/Special/Cells/Birds and Fish.nem" ; special stage birds and fish background
 		even
-Eni_SSBg2:	binclude	"Game Modes/Special Stage/tilemaps/SS Background 2.eni" ; special stage background (mappings)
+Eni_SSBg2:	binclude	"Levels/Special/Maps/Clouds and Bubbles.eni" ; special stage background (mappings)
 		even
-Nem_SSBgCloud:	binclude	"Game Modes/Special Stage/art/Special Clouds.nem" ; special stage clouds background
+Nem_SSBgCloud:	binclude	"Levels/Special/Cells/Clouds.nem" ; special stage clouds background
 		even
-Nem_SSGOAL:	binclude	"Game Modes/Special Stage/art/Special GOAL.nem" ; special stage GOAL block
+Nem_SSGOAL:	binclude	"Levels/Special/Cells/GOAL.nem" ; special stage GOAL block
 		even
-Nem_SSRBlock:	binclude	"Game Modes/Special Stage/art/Special R.nem" ; special stage R block
+Nem_SSRBlock:	binclude	"Levels/Special/Cells/R.nem" ; special stage R block
 		even
-Nem_SS1UpBlock:	binclude	"Game Modes/Special Stage/art/Special 1UP.nem" ; special stage 1UP block
+Nem_SS1UpBlock:	binclude	"Levels/Special/Cells/1UP.nem" ; special stage 1UP block
 		even
-Nem_SSEmStars:	binclude	"Game Modes/Special Stage/art/Special Emerald Twinkle.nem" ; special stage stars from a collected emerald
+Nem_SSEmStars:	binclude	"Levels/Special/Cells/Emerald Twinkle.nem" ; special stage stars from a collected emerald
 		even
-Nem_SSRedWhite:	binclude	"Game Modes/Special Stage/art/Special Red-White.nem" ; special stage red/white block
+Nem_SSRedWhite:	binclude	"Levels/Special/Cells/Red-White.nem" ; special stage red/white block
 		even
-Nem_SSZone1:	binclude	"Game Modes/Special Stage/art/Special ZONE1.nem" ; special stage ZONE1 block
+Nem_SSZone1:	binclude	"Levels/Special/Cells/ZONE1.nem" ; special stage ZONE1 block
 		even
-Nem_SSZone2:	binclude	"Game Modes/Special Stage/art/Special ZONE2.nem" ; ZONE2 block
+Nem_SSZone2:	binclude	"Levels/Special/Cells/ZONE2.nem" ; ZONE2 block
 		even
-Nem_SSZone3:	binclude	"Game Modes/Special Stage/art/Special ZONE3.nem" ; ZONE3 block
+Nem_SSZone3:	binclude	"Levels/Special/Cells/ZONE3.nem" ; ZONE3 block
 		even
-Nem_SSZone4:	binclude	"Game Modes/Special Stage/art/Special ZONE4.nem" ; ZONE4 block
+Nem_SSZone4:	binclude	"Levels/Special/Cells/ZONE4.nem" ; ZONE4 block
 		even
-Nem_SSZone5:	binclude	"Game Modes/Special Stage/art/Special ZONE5.nem" ; ZONE5 block
+Nem_SSZone5:	binclude	"Levels/Special/Cells/ZONE5.nem" ; ZONE5 block
 		even
-Nem_SSZone6:	binclude	"Game Modes/Special Stage/art/Special ZONE6.nem" ; ZONE6 block
+Nem_SSZone6:	binclude	"Levels/Special/Cells/ZONE6.nem" ; ZONE6 block
 		even
-Nem_SSUpDown:	binclude	"Game Modes/Special Stage/art/Special UP-DOWN.nem" ; special stage UP/DOWN block
+Nem_SSUpDown:	binclude	"Levels/Special/Cells/UP-DOWN.nem" ; special stage UP/DOWN block
 		even
-Nem_SSEmerald:	binclude	"Game Modes/Special Stage/art/Special Emeralds.nem" ; special stage chaos emeralds
+Nem_SSEmerald:	binclude	"Levels/Special/Cells/Emeralds.nem" ; special stage chaos emeralds
 		even
-Nem_SSGhost:	binclude	"Game Modes/Special Stage/art/Special Ghost.nem" ; special stage ghost block
+Nem_SSGhost:	binclude	"Levels/Special/Cells/Ghost.nem" ; special stage ghost block
 		even
-Nem_SSWBlock:	binclude	"Game Modes/Special Stage/art/Special W.nem" ; special stage W block
+Nem_SSWBlock:	binclude	"Levels/Special/Cells/W.nem" ; special stage W block
 		even
-Nem_SSGlass:	binclude	"Game Modes/Special Stage/art/Special Glass.nem" ; special stage destroyable glass block
+Nem_SSGlass:	binclude	"Levels/Special/Cells/Glass.nem" ; special stage destroyable glass block
 		even
-Nem_ResultEm:	binclude	"Game Modes/Special Stage/art/Special Result Emeralds.nem" ; chaos emeralds on special stage results screen
+Nem_ResultEm:	binclude	"Levels/Special/Cells/Result Emeralds.nem" ; chaos emeralds on special stage results screen
 		even
 
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - GHZ stuff
 ; ---------------------------------------------------------------------------
-Nem_Stalk:	binclude	"Zones/Green Hill Zone/art/GHZ Flower Stalk.nem"
+Nem_Stalk:	binclude	"Levels/GHZ/Cells/Stalk.nem"
 		even
 Nem_Swing:	binclude	"Objects/Zone/GHZ/Cells/Swinging Platform.nem"
 		even
 Nem_Bridge:	binclude	"Objects/Zone/GHZ/Cells/Bridge.nem"
 		even
-Nem_GhzUnkBlock:binclude	"Zones/Green Hill Zone/art/Unused - GHZ Block.nem"
+Nem_GhzUnkBlock:binclude	"Levels/GHZ/Cells/Unused/Block.nem"
 		even
 Nem_Ball:	binclude	"Objects/Unused/Cells/GHZ Ball.nem"
 		even
 Nem_Spikes:	binclude	"Objects/Global/Cells/Spike.nem"
 		even
-Nem_GhzLog:	binclude	"Zones/Green Hill Zone/art/Unused - GHZ Log.nem"
+Nem_GhzLog:	binclude	"Levels/GHZ/Cells/Unused/Log.nem"
 		even
 Nem_SpikePole:	binclude	"Objects/Zone/GHZ/Cells/Spiked Log.nem"
 		even
@@ -2300,9 +2300,9 @@ Nem_Gargoyle:	binclude	"Objects/Zone/LZ/Cells/Gargoyle & Fireball.nem"
 		even
 Nem_LzBlock2:	binclude	"Objects/Zone/LZ/Cells/Blocks.nem"
 		even
-Nem_LzPlatfm:	binclude	"Zones/Labyrinth Zone/art/LZ Rising Platform.nem"
+Nem_LzPlatfm:	binclude	"Levels/LZ/Cells/Rising Platform.nem"
 		even
-Nem_Cork:	binclude	"Zones/Labyrinth Zone/art/LZ Cork.nem"
+Nem_Cork:	binclude	"Levels/LZ/Cells/Cork.nem"
 		even
 Nem_LzBlock1:	binclude	"Objects/Zone/LZ/Cells/32x32 Block.nem"
 		even
@@ -2310,21 +2310,21 @@ Nem_LzBlock1:	binclude	"Objects/Zone/LZ/Cells/32x32 Block.nem"
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - MZ stuff
 ; ---------------------------------------------------------------------------
-Nem_MzMetal:	binclude	"Zones/Marble Zone/art/MZ Metal Blocks.nem"
+Nem_MzMetal:	binclude	"Levels/MZ/Cells/Metal Blocks.nem"
 		even
 Nem_MzSwitch:	binclude	"Objects/Zone/MZ/Cells/Switch.nem"
 		even
 Nem_MzGlass:	binclude	"Objects/Zone/MZ/Cells/Green Glass Block.nem"
 		even
-Nem_UnkGrass:	binclude	"Zones/Green Hill Zone/art/Unused - Grass.nem"
+Nem_UnkGrass:	binclude	"Levels/GHZ/Cells/Unused/Grass.nem"
 		even
 Nem_MzFire:	binclude	"Objects/Zone/Shared/Cells/Fireballs.nem"
 		even
-Nem_Lava:	binclude	"Zones/Marble Zone/art/MZ Lava.nem"
+Nem_Lava:	binclude	"Levels/MZ/Cells/Lava.nem"
 		even
 Nem_MzBlock:	binclude	"Objects/Zone/MZ/Cells/Green Pushable Block.nem"
 		even
-Nem_MzUnkBlock:	binclude	"Zones/Marble Zone/art/Unused - MZ Background.nem"
+Nem_MzUnkBlock:	binclude	"Levels/MZ/Cells/Unused/Background.nem"
 		even
 
 ; ---------------------------------------------------------------------------
@@ -2332,7 +2332,7 @@ Nem_MzUnkBlock:	binclude	"Zones/Marble Zone/art/Unused - MZ Background.nem"
 ; ---------------------------------------------------------------------------
 Nem_Seesaw:	binclude	"Objects/Zone/SLZ/Cells/Seesaw.nem"
 		even
-Nem_SlzSpike:	binclude	"Zones/Star Light Zone/art/SLZ Little Spikeball.nem"
+Nem_SlzSpike:	binclude	"Levels/SLZ/Cells/Little Spikeball.nem"
 		even
 Nem_Fan:	binclude	"Objects/Zone/SLZ/Cells/Fan.nem"
 		even
@@ -2342,7 +2342,7 @@ Nem_Pylon:	binclude	"Objects/Zone/SLZ/Cells/Pylon.nem"
 		even
 Nem_SlzSwing:	binclude	"Objects/Zone/SLZ/Cells/Swinging Platform.nem"
 		even
-Nem_SlzBlock:	binclude	"Zones/Star Light Zone/art/SLZ 32x32 Block.nem"
+Nem_SlzBlock:	binclude	"Levels/SLZ/Cells/32x32 Block.nem"
 		even
 Nem_SlzCannon:	binclude	"Objects/Zone/SLZ/Cells/Cannon.nem"
 		even
@@ -2384,7 +2384,7 @@ Nem_FlamePipe:	binclude	"Objects/Zone/SBZ/Cells/Flaming Pipe.nem"
 		even
 Nem_SbzDoor1:	binclude	"Objects/Zone/SBZ/Cells/Small Vertical Door.nem"
 		even
-Nem_SlideFloor:	binclude	"Zones/Scrap Brain Zone/art/SBZ Sliding Floor Trap.nem"
+Nem_SlideFloor:	binclude	"Levels/SBZ/Cells/Sliding Floor Trap.nem"
 		even
 Nem_SbzDoor2:	binclude	"Objects/Zone/SBZ/Cells/Large Horizontal Door.nem"
 		even
@@ -2462,9 +2462,9 @@ Nem_Bonus:	binclude	"Objects/Effects/Cells/Hidden Points.nem" ; hidden bonuses a
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - continue screen
 ; ---------------------------------------------------------------------------
-Nem_ContSonic:	binclude	"Game Modes/Continue Screen/art/Continue Screen Sonic.nem"
+Nem_ContSonic:	binclude	"Modes/Cells/Sonic (Continue Screen).nem"
 		even
-Nem_MiniSonic:	binclude	"Game Modes/Continue Screen/art/Continue Screen Stuff.nem"
+Nem_MiniSonic:	binclude	"Modes/Cells/Continue Screen.nem"
 		even
 
 ; ---------------------------------------------------------------------------
@@ -2488,59 +2488,59 @@ Nem_Squirrel:	binclude	"Objects/Effects/Cells/Animal Squirrel.nem"
 ; ---------------------------------------------------------------------------
 ; Compressed graphics - primary patterns and block mappings
 ; ---------------------------------------------------------------------------
-Blk16_GHZ:	binclude	"Zones/Green Hill Zone/blocks/GHZ.eni"
+Blk16_GHZ:	binclude	"Levels/GHZ/Blocks.eni"
 		even
-Nem_GHZ_1st:	binclude	"Zones/Green Hill Zone/art/8x8 - GHZ1.nem" ; GHZ primary patterns
+Nem_GHZ_1st:	binclude	"Levels/GHZ/Cells.nem"
 		even
-Nem_GHZ_2nd:	binclude	"Zones/Green Hill Zone/art/8x8 - GHZ2.nem" ; GHZ secondary patterns
+Nem_GHZ_2nd:	binclude	"Levels/GHZ/Cells/2nd Cells.nem"
 		even
-Blk256_GHZ:	binclude	"Zones/Green Hill Zone/chunks/GHZ.kos"
-		even
-
-Blk16_LZ:	binclude	"Zones/Labyrinth Zone/blocks/LZ.eni"
-		even
-Nem_LZ:		binclude	"Zones/Labyrinth Zone/art/8x8 - LZ.nem" ; LZ primary patterns
-		even
-Blk256_LZ:	binclude	"Zones/Labyrinth Zone/chunks/LZ.kos"
+Blk256_GHZ:	binclude	"Levels/GHZ/Chunks.kos"
 		even
 
-Blk16_MZ:	binclude	"Zones/Marble Zone/blocks/MZ.eni"
+Blk16_LZ:	binclude	"Levels/LZ/Blocks.eni"
 		even
-Nem_MZ:		binclude	"Zones/Marble Zone/art/8x8 - MZ.nem" ; MZ primary patterns
+Nem_LZ:		binclude	"Levels/LZ/Cells.nem"
+		even
+Blk256_LZ:	binclude	"Levels/LZ/Chunks.kos"
+		even
+
+Blk16_MZ:	binclude	"Levels/MZ/Blocks.eni"
+		even
+Nem_MZ:		binclude	"Levels/MZ/Cells.nem"
 		even
 Blk256_MZ:
 	if Revision=0
-		binclude	"Zones/Marble Zone/chunks/MZ (REV00).kos"
+		binclude	"Levels/MZ/Chunks (REV00).kos"
 		even
 	else
-		binclude	"Zones/Marble Zone/chunks/MZ (REV01).kos"
+		binclude	"Levels/MZ/Chunks (REV01).kos"
 		even
 	endif
 
-Blk16_SLZ:	binclude	"Zones/Star Light Zone/blocks/SLZ.eni"
+Blk16_SLZ:	binclude	"Levels/SLZ/Blocks.eni"
 		even
-Nem_SLZ:	binclude	"Zones/Star Light Zone/art/8x8 - SLZ.nem" ; SLZ primary patterns
+Nem_SLZ:	binclude	"Levels/SLZ/Cells.nem"
 		even
-Blk256_SLZ:	binclude	"Zones/Star Light Zone/chunks/SLZ.kos"
-		even
-
-Blk16_SYZ:	binclude	"Zones/Spring Yard Zone/blocks/SYZ.eni"
-		even
-Nem_SYZ:	binclude	"Zones/Spring Yard Zone/art/8x8 - SYZ.nem" ; SYZ primary patterns
-		even
-Blk256_SYZ:	binclude	"Zones/Spring Yard Zone/chunks/SYZ.kos"
+Blk256_SLZ:	binclude	"Levels/SLZ/Chunks.kos"
 		even
 
-Blk16_SBZ:	binclude	"Zones/Scrap Brain Zone/blocks/SBZ.eni"
+Blk16_SYZ:	binclude	"Levels/SYZ/Blocks.eni"
 		even
-Nem_SBZ:	binclude	"Zones/Scrap Brain Zone/art/8x8 - SBZ.nem" ; SBZ primary patterns
+Nem_SYZ:	binclude	"Levels/SYZ/Cells.nem"
+		even
+Blk256_SYZ:	binclude	"Levels/SYZ/Chunks.kos"
+		even
+
+Blk16_SBZ:	binclude	"Levels/SBZ/Blocks.eni"
+		even
+Nem_SBZ:	binclude	"Levels/SBZ/Cells.nem"
 		even
 Blk256_SBZ:
 	if Revision=0
-		binclude	"Zones/Scrap Brain Zone/chunks/SBZ (REV00).kos"
+		binclude	"Levels/SBZ/Chunks (REV00).kos"
 		even
 	else
-		binclude	"Zones/Scrap Brain Zone/chunks/SBZ (REV01).kos"
+		binclude	"Levels/SBZ/Chunks (REV01).kos"
 		even
 	endif
 
@@ -2561,24 +2561,24 @@ Nem_FzEggman:	binclude	"Objects/Bosses/Cells/Eggman (After Crusher).nem"
 		even
 Nem_Exhaust:	binclude	"Objects/Bosses/Cells/Exhaust Flame.nem"
 		even
-Nem_EndEm:	binclude	"Game Modes/Ending/art/Ending - Emeralds.nem"
+Nem_EndEm:	binclude	"Modes/Cells/End Emeralds.nem"
 		even
-Nem_EndSonic:	binclude	"Game Modes/Ending/art/Ending - Sonic.nem"
+Nem_EndSonic:	binclude	"Modes/Cells/Sonic (End Cutscene).nem"
 		even
-Nem_TryAgain:	binclude	"Game Modes/Ending/art/Ending - Try Again.nem"
+Nem_TryAgain:	binclude	"Modes/Cells/Try Again.nem"
 		even
 	if Revision=0
 Nem_EndEggman:
-		binclude	"Game Modes/Ending/art/Unused - Eggman Ending.nem"
+		binclude	"Modes/Cells/Unused/End Eggman.nem"
 		even
 	endif
-Kos_EndFlowers:	binclude	"Game Modes/Ending/art/Flowers at Ending.kos" ; ending sequence animated flowers
+Kos_EndFlowers:	binclude	"Levels/GHZ/Cells/End Cutscene Flowers.kos" ; ending sequence animated flowers
 		even
-Nem_EndFlower:	binclude	"Game Modes/Ending/art/Ending - Flowers.nem"
+Nem_EndFlower:	binclude	"Levels/GHZ/Cells/End Flowers.nem"
 		even
-Nem_CreditText:	binclude	"Game Modes/Ending/art/Ending - Credits.nem"
+Nem_CreditText:	binclude	"Modes/Cells/Credits.nem"
 		even
-Nem_EndStH:	binclude	"Game Modes/Ending/art/Ending - StH Logo.nem"
+Nem_EndStH:	binclude	"Modes/Cells/STH Logo.nem"
 		even
 
 ; ---------------------------------------------------------------------------
@@ -2597,66 +2597,66 @@ Nem_EndStH:	binclude	"Game Modes/Ending/art/Ending - StH Logo.nem"
 ; ---------------------------------------------------------------------------
 ; Collision data
 ; ---------------------------------------------------------------------------
-AngleMap:	binclude	"Zones/shared/collision/Angle Map.bin"
+AngleMap:	binclude	"Levels/Collision/Angle Map.bin"
 		even
-CollArray1:	binclude	"Zones/shared/collision/Collision Array (Normal).bin"
+CollArray1:	binclude	"Levels/Collision/Collision Array (Normal).bin"
 		even
-CollArray2:	binclude	"Zones/shared/collision/Collision Array (Rotated).bin"
+CollArray2:	binclude	"Levels/Collision/Collision Array (Rotated).bin"
 		even
-Col_GHZ:	binclude	"Zones/Green Hill Zone/collision/GHZ.bin" ; GHZ index
+Col_GHZ:	binclude	"Levels/GHZ/Collision.bin" ; GHZ index
 		even
-Col_LZ:		binclude	"Zones/Labyrinth Zone/collision/LZ.bin" ; LZ index
+Col_LZ:		binclude	"Levels/LZ/Collision.bin" ; LZ index
 		even
-Col_MZ:		binclude	"Zones/Marble Zone/collision/MZ.bin" ; MZ index
+Col_MZ:		binclude	"Levels/MZ/Collision.bin" ; MZ index
 		even
-Col_SLZ:	binclude	"Zones/Star Light Zone/collision/SLZ.bin" ; SLZ index
+Col_SLZ:	binclude	"Levels/SLZ/Collision.bin" ; SLZ index
 		even
-Col_SYZ:	binclude	"Zones/Spring Yard Zone/collision/SYZ.bin" ; SYZ index
+Col_SYZ:	binclude	"Levels/SYZ/Collision.bin" ; SYZ index
 		even
-Col_SBZ:	binclude	"Zones/Scrap Brain Zone/collision/SBZ.bin" ; SBZ index
+Col_SBZ:	binclude	"Levels/SBZ/Collision.bin" ; SBZ index
 		even
 
 ; ---------------------------------------------------------------------------
 ; Special Stage layouts
 ; ---------------------------------------------------------------------------
-SS_1:		binclude	"Game Modes/Special Stage/layouts/1.eni"
+SS_1:		binclude	"Levels/Special/Layouts/1.eni"
 		even
-SS_2:		binclude	"Game Modes/Special Stage/layouts/2.eni"
+SS_2:		binclude	"Levels/Special/Layouts/2.eni"
 		even
-SS_3:		binclude	"Game Modes/Special Stage/layouts/3.eni"
+SS_3:		binclude	"Levels/Special/Layouts/3.eni"
 		even
-SS_4:		binclude	"Game Modes/Special Stage/layouts/4.eni"
+SS_4:		binclude	"Levels/Special/Layouts/4.eni"
 		even
 	if Revision=0
-SS_5:		binclude	"Game Modes/Special Stage/layouts/5 (REV00).eni"
+SS_5:		binclude	"Levels/Special/Layouts/5 (REV00).eni"
 		even
-SS_6:		binclude	"Game Modes/Special Stage/layouts/6 (REV00).eni"
+SS_6:		binclude	"Levels/Special/Layouts/6 (REV00).eni"
 		even
 	else
-		; SS 5 and 6 had broken objects outside the accessible layout;
-		; REV01 removes those - remaining layouts stay unchanged.
-SS_5:		binclude	"Game Modes/Special Stage/layouts/5 (REV01).eni"
+		; SS 5 and 6 had broken objects outside the accessible Layout;
+		; REV01 removes those - remaining Layouts stay unchanged.
+SS_5:		binclude	"Levels/Special/Layouts/5 (REV01).eni"
 		even
-SS_6:		binclude	"Game Modes/Special Stage/layouts/6 (REV01).eni"
+SS_6:		binclude	"Levels/Special/Layouts/6 (REV01).eni"
 		even
 	endif
 
 ; ---------------------------------------------------------------------------
 ; Animated uncompressed graphics
 ; ---------------------------------------------------------------------------
-Art_GhzWater:	binclude	"Zones/Green Hill Zone/art/GHZ Waterfall.unc"
+Art_GhzWater:	binclude	"Levels/GHZ/Cells/Waterfall.unc"
 		even
-Art_GhzFlower1:	binclude	"Zones/Green Hill Zone/art/GHZ Flower Large.unc"
+Art_GhzFlower1:	binclude	"Levels/GHZ/Cells/Sunflower.unc"
 		even
-Art_GhzFlower2:	binclude	"Zones/Green Hill Zone/art/GHZ Flower Small.unc"
+Art_GhzFlower2:	binclude	"Levels/GHZ/Cells/Small Flower.unc"
 		even
-Art_MzLava1:	binclude	"Zones/Marble Zone/art/MZ Lava Surface.unc"
+Art_MzLava1:	binclude	"Levels/MZ/Cells/Lava Surface.unc"
 		even
-Art_MzLava2:	binclude	"Zones/Marble Zone/art/MZ Lava.unc"
+Art_MzLava2:	binclude	"Levels/MZ/Cells/Lava.unc"
 		even
-Art_MzTorch:	binclude	"Zones/Marble Zone/art/MZ Background Torch.unc"
+Art_MzTorch:	binclude	"Levels/MZ/Cells/Background Torch.unc"
 		even
-Art_SbzSmoke:	binclude	"Zones/Scrap Brain Zone/art/SBZ Background Smoke.unc"
+Art_SbzSmoke:	binclude	"Levels/SBZ/Cells/Background Smoke.unc"
 		even
 
 ; ---------------------------------------------------------------------------
@@ -2701,89 +2701,89 @@ Level_Index:
 		dc.w Level_EndUnk-Level_Index, Level_EndUnk-Level_Index, Level_EndUnk-Level_Index
 		dc.w Level_EndUnk-Level_Index, Level_EndUnk-Level_Index, Level_EndUnk-Level_Index
 
-Level_GHZ1:	binclude	"Zones/Green Hill Zone/layouts/ghz1.bin"
+Level_GHZ1:	binclude	"Levels/GHZ/Act 1/Layout.bin"
 		even
 Level_GHZ1Unk:	dc.l 0
-Level_GHZ2:	binclude	"Zones/Green Hill Zone/layouts/ghz2.bin"
+Level_GHZ2:	binclude	"Levels/GHZ/Act 2/Layout.bin"
 		even
 Level_GHZ2Unk:	dc.l 0
-Level_GHZ3:	binclude	"Zones/Green Hill Zone/layouts/ghz3.bin"
+Level_GHZ3:	binclude	"Levels/GHZ/Act 3/Layout.bin"
 		even
-Level_GHZbg:	binclude	"Zones/Green Hill Zone/layouts/ghzbg.bin"
+Level_GHZbg:	binclude	"Levels/GHZ/Background.bin"
 		even
 Level_GHZ3Unk:	dc.l 0
 Level_GHZ4Unk:	dc.l 0
 
-Level_LZ1:	binclude	"Zones/Labyrinth Zone/layouts/lz1.bin"
+Level_LZ1:	binclude	"Levels/LZ/Act 1/Layout.bin"
 		even
-Level_LZbg:	binclude	"Zones/Labyrinth Zone/layouts/lzbg.bin"
+Level_LZbg:	binclude	"Levels/LZ/Background.bin"
 		even
 Level_LZ1Unk:	dc.l 0
-Level_LZ2:	binclude	"Zones/Labyrinth Zone/layouts/lz2.bin"
+Level_LZ2:	binclude	"Levels/LZ/Act 2/Layout.bin"
 		even
 Level_LZ2Unk:	dc.l 0
-Level_LZ3:	binclude	"Zones/Labyrinth Zone/layouts/lz3.bin"
+Level_LZ3:	binclude	"Levels/LZ/Act 3/Layout.bin"
 		even
 Level_LZ3Unk:	dc.l 0
-Level_SBZ3:	binclude	"Zones/Scrap Brain Zone/layouts/sbz3.bin"
+Level_SBZ3:	binclude	"Levels/SBZ/Act 3/Layout.bin"
 		even
 Level_SBZ3Unk:	dc.l 0
 
-Level_MZ1:	binclude	"Zones/Marble Zone/layouts/mz1.bin"
+Level_MZ1:	binclude	"Levels/MZ/Act 1/Layout.bin"
 		even
-Level_MZ1bg:	binclude	"Zones/Marble Zone/layouts/mz1bg.bin"
+Level_MZ1bg:	binclude	"Levels/MZ/Act 1/Background.bin"
 		even
-Level_MZ2:	binclude	"Zones/Marble Zone/layouts/mz2.bin"
+Level_MZ2:	binclude	"Levels/MZ/Act 2/Layout.bin"
 		even
-Level_MZ2bg:	binclude	"Zones/Marble Zone/layouts/mz2bg.bin"
+Level_MZ2bg:	binclude	"Levels/MZ/Act 2/Background.bin"
 		even
 Level_MZ2Unk:	dc.l 0
-Level_MZ3:	binclude	"Zones/Marble Zone/layouts/mz3.bin"
+Level_MZ3:	binclude	"Levels/MZ/Act 3/Layout.bin"
 		even
-Level_MZ3bg:	binclude	"Zones/Marble Zone/layouts/mz3bg.bin"
+Level_MZ3bg:	binclude	"Levels/MZ/Act 3/Background.bin"
 		even
 Level_MZ3Unk:	dc.l 0
 Level_MZ4Unk:	dc.l 0
 
-Level_SLZ1:	binclude	"Zones/Star Light Zone/layouts/slz1.bin"
+Level_SLZ1:	binclude	"Levels/SLZ/Act 1/Layout.bin"
 		even
-Level_SLZbg:	binclude	"Zones/Star Light Zone/layouts/slzbg.bin"
+Level_SLZbg:	binclude	"Levels/SLZ/Background.bin"
 		even
-Level_SLZ2:	binclude	"Zones/Star Light Zone/layouts/slz2.bin"
+Level_SLZ2:	binclude	"Levels/SLZ/Act 2/Layout.bin"
 		even
-Level_SLZ3:	binclude	"Zones/Star Light Zone/layouts/slz3.bin"
+Level_SLZ3:	binclude	"Levels/SLZ/Act 3/Layout.bin"
 		even
 Level_SLZ1Unk:	dc.l 0
 
-Level_SYZ1:	binclude	"Zones/Spring Yard Zone/layouts/syz1.bin"
+Level_SYZ1:	binclude	"Levels/SYZ/Act 1/Layout.bin"
 		even
 Level_SYZbg:
 	if Revision=0
-		binclude	"Zones/Spring Yard Zone/layouts/syzbg (REV00).bin"
+		binclude	"Levels/SYZ/Background (REV00).bin"
 	else
-		binclude	"Zones/Spring Yard Zone/layouts/syzbg (REV01).bin"
+		binclude	"Levels/SYZ/Background (REV01).bin"
 	endif
 		even
 Level_SYZ1Unk:	dc.l 0
-Level_SYZ2:	binclude	"Zones/Spring Yard Zone/layouts/syz2.bin"
+Level_SYZ2:	binclude	"Levels/SYZ/Act 2/Layout.bin"
 		even
 Level_SYZ2Unk:	dc.l 0
-Level_SYZ3:	binclude	"Zones/Spring Yard Zone/layouts/syz3.bin"
+Level_SYZ3:	binclude	"Levels/SYZ/Act 3/Layout.bin"
 		even
 Level_SYZ3Unk:	dc.l 0
 Level_SYZ4Unk:	dc.l 0
 
-Level_SBZ1:	binclude	"Zones/Scrap Brain Zone/layouts/sbz1.bin"
+Level_SBZ1:	binclude	"Levels/SBZ/Act 1/Layout.bin"
 		even
-Level_SBZ1bg:	binclude	"Zones/Scrap Brain Zone/layouts/sbz1bg.bin"
+Level_SBZ1bg:	binclude	"Levels/SBZ/Act 1/Background.bin"
 		even
-Level_SBZ2:	binclude	"Zones/Scrap Brain Zone/layouts/sbz2.bin"
+Level_SBZ2:	binclude	"Levels/SBZ/Act 2/Layout.bin"
 		even
-Level_SBZ2bg:	binclude	"Zones/Scrap Brain Zone/layouts/sbz2bg.bin"
+Level_SBZ2bg:	binclude	"Levels/SBZ/Act 2/Background.bin"
 		even
 Level_SBZ2Unk:	dc.l 0
 Level_SBZ4Unk:	dc.l 0
-Level_End:	binclude	"Game Modes/Ending/layouts/ending.bin"
+Level_End:	binclude	"Levels/GHZ/Ending/Layout.bin"
 		even
 Level_EndUnk:	dc.l 0
 
@@ -2856,112 +2856,112 @@ ObjPosSBZPlatform_Index:
 		dc.w ObjPos_SBZ1pf1-ObjPos_Index, ObjPos_SBZ1pf2-ObjPos_Index
 		dc.b $FF, $FF, 0, 0, 0,	0
 
-ObjPos_GHZ1:	binclude	"Zones/Green Hill Zone/objpos/ghz1.bin"
+ObjPos_GHZ1:	binclude	"Levels/GHZ/Act 1/Objects.bin"
 		even
-ObjPos_GHZ2:	binclude	"Zones/Green Hill Zone/objpos/ghz2.bin"
+ObjPos_GHZ2:	binclude	"Levels/GHZ/Act 2/Objects.bin"
 		even
 ObjPos_GHZ3:
 	if Revision=0
-		binclude	"Zones/Green Hill Zone/objpos/ghz3 (REV00).bin"
+		binclude	"Levels/GHZ/Act 3/Objects (REV00).bin"
 		even
 	else
-		binclude	"Zones/Green Hill Zone/objpos/ghz3 (REV01).bin"
+		binclude	"Levels/GHZ/Act 3/Objects (REV01).bin"
 		even
 	endif
 
 ObjPos_LZ1:
 	if Revision=0
-		binclude	"Zones/Labyrinth Zone/objpos/lz1 (REV00).bin"
+		binclude	"Levels/LZ/Act 1/Objects (REV00).bin"
 		even
 	else
-		binclude	"Zones/Labyrinth Zone/objpos/lz1 (REV01).bin"
+		binclude	"Levels/LZ/Act 1/Objects (REV01).bin"
 		even
 	endif
-ObjPos_LZ2:	binclude	"Zones/Labyrinth Zone/objpos/lz2.bin"
+ObjPos_LZ2:	binclude	"Levels/LZ/Act 2/Objects.bin"
 		even
 ObjPos_LZ3:
 	if Revision=0
-		binclude	"Zones/Labyrinth Zone/objpos/lz3 (REV00).bin"
+		binclude	"Levels/LZ/Act 3/Objects (REV00).bin"
 		even
 	else
-		binclude	"Zones/Labyrinth Zone/objpos/lz3 (REV01).bin"
+		binclude	"Levels/LZ/Act 3/Objects (REV01).bin"
 		even
 	endif
-ObjPos_SBZ3:	binclude	"Zones/Scrap Brain Zone/objpos/sbz3.bin"
+ObjPos_SBZ3:	binclude	"Levels/SBZ/Act 3/Objects.bin"
 		even
 
-ObjPos_LZ1pf1:	binclude	"Zones/Labyrinth Zone/objpos/platforms/lz1pf1.bin"
+ObjPos_LZ1pf1:	binclude	"Levels/LZ/Act 1/Platforms/1.bin"
 		even
-ObjPos_LZ1pf2:	binclude	"Zones/Labyrinth Zone/objpos/platforms/lz1pf2.bin"
+ObjPos_LZ1pf2:	binclude	"Levels/LZ/Act 1/Platforms/2.bin"
 		even
-ObjPos_LZ2pf1:	binclude	"Zones/Labyrinth Zone/objpos/platforms/lz2pf1.bin"
+ObjPos_LZ2pf1:	binclude	"Levels/LZ/Act 2/Platforms/1.bin"
 		even
-ObjPos_LZ2pf2:	binclude	"Zones/Labyrinth Zone/objpos/platforms/lz2pf2.bin"
+ObjPos_LZ2pf2:	binclude	"Levels/LZ/Act 2/Platforms/2.bin"
 		even
-ObjPos_LZ3pf1:	binclude	"Zones/Labyrinth Zone/objpos/platforms/lz3pf1.bin"
+ObjPos_LZ3pf1:	binclude	"Levels/LZ/Act 3/Platforms/1.bin"
 		even
-ObjPos_LZ3pf2:	binclude	"Zones/Labyrinth Zone/objpos/platforms/lz3pf2.bin"
+ObjPos_LZ3pf2:	binclude	"Levels/LZ/Act 3/Platforms/2.bin"
 		even
 
 ObjPos_MZ1:
 	if Revision=0
-		binclude	"Zones/Marble Zone/objpos/mz1 (REV00).bin"
+		binclude	"Levels/MZ/Act 1/Objects (REV00).bin"
 		even
 	else
-		binclude	"Zones/Marble Zone/objpos/mz1 (REV01).bin"
+		binclude	"Levels/MZ/Act 1/Objects (REV01).bin"
 		even
 	endif
-ObjPos_MZ2:	binclude	"Zones/Marble Zone/objpos/mz2.bin"
+ObjPos_MZ2:	binclude	"Levels/MZ/Act 2/Objects.bin"
 		even
-ObjPos_MZ3:	binclude	"Zones/Marble Zone/objpos/mz3.bin"
+ObjPos_MZ3:	binclude	"Levels/MZ/Act 3/Objects.bin"
 		even
 
-ObjPos_SLZ1:	binclude	"Zones/Star Light Zone/objpos/slz1.bin"
+ObjPos_SLZ1:	binclude	"Levels/SLZ/Act 1/Objects.bin"
 		even
-ObjPos_SLZ2:	binclude	"Zones/Star Light Zone/objpos/slz2.bin"
+ObjPos_SLZ2:	binclude	"Levels/SLZ/Act 2/Objects.bin"
 		even
-ObjPos_SLZ3:	binclude	"Zones/Star Light Zone/objpos/slz3.bin"
+ObjPos_SLZ3:	binclude	"Levels/SLZ/Act 3/Objects.bin"
 		even
-ObjPos_SYZ1:	binclude	"Zones/Spring Yard Zone/objpos/syz1.bin"
+ObjPos_SYZ1:	binclude	"Levels/SYZ/Act 1/Objects.bin"
 		even
-ObjPos_SYZ2:	binclude	"Zones/Spring Yard Zone/objpos/syz2.bin"
+ObjPos_SYZ2:	binclude	"Levels/SYZ/Act 2/Objects.bin"
 		even
 ObjPos_SYZ3:
 	if Revision=0
-		binclude	"Zones/Spring Yard Zone/objpos/syz3 (REV00).bin"
+		binclude	"Levels/SYZ/Act 3/Objects (REV00).bin"
 		even
 	else
-		binclude	"Zones/Spring Yard Zone/objpos/syz3 (REV01).bin"
+		binclude	"Levels/SYZ/Act 3/Objects (REV01).bin"
 		even
 	endif
 
 ObjPos_SBZ1:
 	if Revision=0
-		binclude	"Zones/Scrap Brain Zone/objpos/sbz1 (REV00).bin"
+		binclude	"Levels/SBZ/Act 1/Objects (REV00).bin"
 		even
 	else
-		binclude	"Zones/Scrap Brain Zone/objpos/sbz1 (REV01).bin"
+		binclude	"Levels/SBZ/Act 1/Objects (REV01).bin"
 		even
 	endif
-ObjPos_SBZ2:	binclude	"Zones/Scrap Brain Zone/objpos/sbz2.bin"
+ObjPos_SBZ2:	binclude	"Levels/SBZ/Act 2/Objects.bin"
 		even
-ObjPos_FZ:	binclude	"Zones/Scrap Brain Zone/objpos/fz.bin"
-		even
-
-ObjPos_SBZ1pf1:	binclude	"Zones/Scrap Brain Zone/objpos/platforms/sbz1pf1.bin"
-		even
-ObjPos_SBZ1pf2:	binclude	"Zones/Scrap Brain Zone/objpos/platforms/sbz1pf2.bin"
-		even
-ObjPos_SBZ1pf3:	binclude	"Zones/Scrap Brain Zone/objpos/platforms/sbz1pf3.bin"
-		even
-ObjPos_SBZ1pf4:	binclude	"Zones/Scrap Brain Zone/objpos/platforms/sbz1pf4.bin"
-		even
-ObjPos_SBZ1pf5:	binclude	"Zones/Scrap Brain Zone/objpos/platforms/sbz1pf5.bin"
-		even
-ObjPos_SBZ1pf6:	binclude	"Zones/Scrap Brain Zone/objpos/platforms/sbz1pf6.bin"
+ObjPos_FZ:	binclude	"Levels/SBZ/Final/Objects.bin"
 		even
 
-ObjPos_End:	binclude	"Game Modes/Ending/objpos/ending.bin"
+ObjPos_SBZ1pf1:	binclude	"Levels/SBZ/Act 1/Platforms/1.bin"
+		even
+ObjPos_SBZ1pf2:	binclude	"Levels/SBZ/Act 1/Platforms/2.bin"
+		even
+ObjPos_SBZ1pf3:	binclude	"Levels/SBZ/Act 1/Platforms/3.bin"
+		even
+ObjPos_SBZ1pf4:	binclude	"Levels/SBZ/Act 1/Platforms/4.bin"
+		even
+ObjPos_SBZ1pf5:	binclude	"Levels/SBZ/Act 1/Platforms/5.bin"
+		even
+ObjPos_SBZ1pf6:	binclude	"Levels/SBZ/Act 1/Platforms/6.bin"
+		even
+
+ObjPos_End:	binclude	"Levels/GHZ/Ending/Objects.bin"
 		even
 
 ObjPos_Null:	dc.b $FF, $FF, 0, 0, 0,	0
@@ -2983,7 +2983,7 @@ ObjPos_Null:	dc.b $FF, $FF, 0, 0, 0,	0
 
 ; ---------------------------------------------------------------------------
 
-SoundDriver:	include "Sound/s1.sounddriver.asm"
+SoundDriver:	include "Sound/Driver.asm"
 		even
 
 ; ---------------------------------------------------------------------------

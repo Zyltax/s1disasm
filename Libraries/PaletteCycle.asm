@@ -5,7 +5,7 @@
 
 PaletteCycle:
 	if FixBugs
-		; Fix palettes getting corrupted during level transitions between different zones
+		; Fix Palettes getting corrupted during level transitions between different zones
 		tst.w	(f_restart).w				; is level set to restart?
 		beq.s	.doCycle				; if not, branch
 		rts						; don't execute palette cycle
@@ -144,7 +144,7 @@ PalCycle_LZ:
 
 ; ---------------------------------------------------------------------------
 PCycLZ_ConveyorSequence:
-		; 0 = skip cycle this frame // 1 = advance cycle this frame
+		; 0 = skip cycle this frame //1 = advance cycle this frame
 		dc.b 1,	0, 0, 1, 0, 0, 1, 0
 		even
 ; ---------------------------------------------------------------------------
@@ -239,7 +239,7 @@ PalCycle_SYZ:
 ; ---------------------------------------------------------------------------
 
 PalCycle_SBZ:
-		; Custom palette scripts per act 1 and act 2 / FZ, see notes below
+		; Custom palette scripts per act 1 and act 2 /FZ, see notes below
 		lea	(Pal_SBZCycList_Act1).l,a2		; script for SBZ act 1
 		tst.b	(v_act).w				; are we in the first act?
 		beq.s	.executeCycleScripts			; if yes, branch
@@ -319,16 +319,16 @@ PalCycle_SBZ:
 ; Palette cycle data bincludes
 ; ---------------------------------------------------------------------------
 
-Pal_TitleCyc_Water:	binclude	"Game Modes/Title Screen/palettes/Cycle - Title Screen Water.bin"
-Pal_GHZCyc_Water:	binclude	"Zones/Green Hill Zone/palettes/Cycle - GHZ.bin"
-Pal_LZCyc_Waterfall:	binclude	"Zones/Labyrinth Zone/palettes/Cycle - LZ Waterfall.bin"
-Pal_LZCyc_Conveyor:	binclude	"Zones/Labyrinth Zone/palettes/Cycle - LZ Conveyor Belt.bin"
-Pal_LZCyc_ConveyorUW:	binclude	"Zones/Labyrinth Zone/palettes/Cycle - LZ Conveyor Belt Underwater.bin"
-Pal_SBZ3Cyc_Waterfall:	binclude	"Zones/Scrap Brain Zone/palettes/Cycle - SBZ3 Waterfall.bin"
-Pal_MZCyc_Unused:	binclude	"Zones/Marble Zone/palettes/Cycle - MZ (Unused).bin"
-Pal_SLZCyc_Lights:	binclude	"Zones/Star Light Zone/palettes/Cycle - SLZ.bin"
-Pal_SYZCyc_BlackYellow:	binclude	"Zones/Spring Yard Zone/palettes/Cycle - SYZ1.bin"
-Pal_SYZCyc_RedWhite:	binclude	"Zones/Spring Yard Zone/palettes/Cycle - SYZ2.bin"
+Pal_TitleCyc_Water:	binclude	"Modes/Palettes/Cycle/Title Screen Water.bin"
+Pal_GHZCyc_Water:	binclude	"Levels/GHZ/Palettes/Cycle.bin"
+Pal_LZCyc_Waterfall:	binclude	"Levels/LZ/Palettes/Cycle/Waterfall.bin"
+Pal_LZCyc_Conveyor:	binclude	"Levels/LZ/Palettes/Cycle/Conveyor Belt.bin"
+Pal_LZCyc_ConveyorUW:	binclude	"Levels/LZ/Palettes/Cycle/Conveyor Belt Underwater.bin"
+Pal_SBZ3Cyc_Waterfall:	binclude	"Levels/SBZ/Palettes/Cycle/Waterfall.bin"
+Pal_MZCyc_Unused:	binclude	"Levels/MZ/Palettes/Cycle (Unused).bin"
+Pal_SLZCyc_Lights:	binclude	"Levels/SLZ/Palettes/Cycle.bin"
+Pal_SYZCyc_BlackYellow:	binclude	"Levels/SYZ/Palettes/Cycle/1.bin"
+Pal_SYZCyc_RedWhite:	binclude	"Levels/SYZ/Palettes/Cycle/2.bin"
 
 
 ; ===========================================================================
@@ -376,13 +376,13 @@ Pal_SBZCycList_Act2FZ_end:
 ; SBZ palette cycle data bincludes
 ; ---------------------------------------------------------------------------
 
-Pal_SBZCyc1:		binclude	"Zones/Scrap Brain Zone/palettes/Cycle - SBZ 1.bin"	; FG multi-colored small blinking lights
-Pal_SBZCyc2:		binclude	"Zones/Scrap Brain Zone/palettes/Cycle - SBZ 2.bin"	; FG slow red/yellow pulse
-Pal_SBZCyc3:		binclude	"Zones/Scrap Brain Zone/palettes/Cycle - SBZ 3.bin"	; BG very slow red pulse
-Pal_SBZCyc_ConveyAct1:	binclude	"Zones/Scrap Brain Zone/palettes/Cycle - SBZ 4.bin"	; conveyor belts in act 1
-Pal_SBZCyc5:		binclude	"Zones/Scrap Brain Zone/palettes/Cycle - SBZ 5.bin"	; BG slow red pulse
-Pal_SBZCyc6:		binclude	"Zones/Scrap Brain Zone/palettes/Cycle - SBZ 6.bin"	; BG slow teal pulse
-Pal_SBZCyc7:		binclude	"Zones/Scrap Brain Zone/palettes/Cycle - SBZ 7.bin"	; BG very slow yellow/cyan pulse
-Pal_SBZCyc8:		binclude	"Zones/Scrap Brain Zone/palettes/Cycle - SBZ 8.bin"	; electrocutor pink/purple & act 2 BG pink square
-Pal_SBZCyc9:		binclude	"Zones/Scrap Brain Zone/palettes/Cycle - SBZ 9.bin"	; BG multi-colored small blinking lights (act 2 only)
-Pal_SBZCyc_ConveyAct2:	binclude	"Zones/Scrap Brain Zone/palettes/Cycle - SBZ 10.bin"	; conveyor belts in act 2 / FZ
+Pal_SBZCyc1:		binclude	"Levels/SBZ/Palettes/Cycle/1.bin"	; FG multi-colored small blinking lights
+Pal_SBZCyc2:		binclude	"Levels/SBZ/Palettes/Cycle/2.bin"	; FG slow red/yellow pulse
+Pal_SBZCyc3:		binclude	"Levels/SBZ/Palettes/Cycle/3.bin"	; BG very slow red pulse
+Pal_SBZCyc_ConveyAct1:	binclude	"Levels/SBZ/Palettes/Cycle/4.bin"	; conveyor belts in act 1
+Pal_SBZCyc5:		binclude	"Levels/SBZ/Palettes/Cycle/5.bin"	; BG slow red pulse
+Pal_SBZCyc6:		binclude	"Levels/SBZ/Palettes/Cycle/6.bin"	; BG slow teal pulse
+Pal_SBZCyc7:		binclude	"Levels/SBZ/Palettes/Cycle/7.bin"	; BG very slow yellow/cyan pulse
+Pal_SBZCyc8:		binclude	"Levels/SBZ/Palettes/Cycle/8.bin"	; electrocutor pink/purple & act 2 BG pink square
+Pal_SBZCyc9:		binclude	"Levels/SBZ/Palettes/Cycle/9.bin"	; BG multi-colored small blinking lights (act 2 only)
+Pal_SBZCyc_ConveyAct2:	binclude	"Levels/SBZ/Palettes/Cycle/10.bin"	; conveyor belts in act 2 /
