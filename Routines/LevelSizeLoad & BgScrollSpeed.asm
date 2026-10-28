@@ -51,11 +51,11 @@ LevelSizeLoad:
 ; Level size array
 ; ---------------------------------------------------------------------------
 LevelSizeArray:
-		include	"Libraries/LevelSizeArray.asm"
+		include	"Routines/LevelSizeArray.asm"
 
 ; ---------------------------------------------------------------------------
 ; Ending start location array
-; (Previously separated into "Libraries/Start Location Array - Ending.asm")
+; (Previously separated into "Routines/Start Location Array - Ending.asm")
 ; ---------------------------------------------------------------------------
 EndingStLocArray:
 		binclude	"Levels/GHZ/Act 1/Demo Start Position.bin"
@@ -167,7 +167,7 @@ LevSz_InitBackgroundAndLoops:
 ; ===========================================================================
 ; ---------------------------------------------------------------------------
 ; Sonic start location array
-; (Previously separated into "Libraries/Start Location Array - Levels.asm")
+; (Previously separated into "Routines/Start Location Array - Levels.asm")
 ; ---------------------------------------------------------------------------
 ; All unused acts default to the same starting location of x=$0080, y=$00A8
 unused_startloc: macro

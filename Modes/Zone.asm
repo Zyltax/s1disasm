@@ -396,8 +396,8 @@ Level_FDLoop_NoDim:
 
 ; ===========================================================================
 ; >>> Misc level logic for specific circumstances
-	include	"Libraries/LZWaterFeatures.asm"
-	include	"Libraries/MoveSonicInDemo.asm"
+	include	"Routines/LZWaterFeatures.asm"
+	include	"Routines/MoveSonicInDemo.asm"
 
 
 ; ===========================================================================
@@ -429,7 +429,7 @@ ColPointers:	dc.l Col_GHZ
 
 ; ===========================================================================
 ; >>> Routines to set and update values that change on a fixed timer
-	include	"Libraries/Oscillatory Routines.asm"
+	include	"Routines/Oscillatory Routines.asm"
 
 
 ; ===========================================================================

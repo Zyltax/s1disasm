@@ -215,7 +215,7 @@ Got_NextLevel:	; Routine $A
 ; Level order array
 ; ---------------------------------------------------------------------------
 LevelOrder:
-		include	"Libraries/LevelOrder.asm"
+		include	"Routines/LevelOrder.asm"
 
 ; ===========================================================================
 
